@@ -31,4 +31,14 @@
 .nav-right {
   display: flex;
   gap: 2rem;
+
+}
+
+.nav-right-items {
+  display: flex;
+  gap: 1rem;
+  font-size: .9rem;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--primary-dark);
 }

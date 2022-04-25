@@ -15,8 +15,10 @@ const Navbar = () => {
 				</label>
 			</div>
 			<div className="nav-right">
-				<span>Login</span>
-				<span>User</span>
+				<Link to="/profile" className="nav-right-items">
+					<span>Hi, User</span>
+					<i class="fas fa-user-circle"></i>
+				</Link>
 			</div>
 		</div>
 	);
