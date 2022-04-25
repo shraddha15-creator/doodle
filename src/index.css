@@ -1,10 +1,15 @@
 :root {
-  --primary-dark: #181818;
+  /* --primary-dark: #181818; */
+  --primary-dark: #212121;
   --primary-light: #F6F8FA;
   --secondary: #00AA45;
   --gray-light: #E1E4E8;
 }
 
+* {
+  padding: 0;
+  margin: 0;
+}
 
 body {
   margin: 0;
