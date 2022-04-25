@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--gray-light);
 }
 
 .brand-name {
@@ -12,11 +12,12 @@
   color: var(--secondary);
   font-family: 'Fredoka One',
     cursive;
+  text-decoration: none;
 }
 
 .nav-middle {
   text-align: baseline;
-  border: 1px solid var(--border);
+  border: 1px solid var(--gray-light);
   border-radius: 5px;
   padding: .1rem 2rem .1rem .3rem;
 }

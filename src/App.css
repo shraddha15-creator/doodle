@@ -22,7 +22,7 @@ i {
 
 .main-container {
   display: flex;
-  /* border: 1px dotted var(--border); */
+  gap: 2rem;
   background-color: var(--vl-primary-light);
   margin-top: 1rem;
 }

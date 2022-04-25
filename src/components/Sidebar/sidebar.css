@@ -9,9 +9,21 @@
 
 .sidebar-items {
   display: flex;
-  gap: .5rem;
   align-items: baseline;
-  font-size: 1rem;
-  cursor: pointer;
+  gap: .5rem;
+  padding: .3rem .3rem;
+  border-radius: 5px;
   font-size: .9rem;
+  text-decoration: none;
+  color: var(--primary-dark);
+  cursor: pointer;
+}
+
+.active {
+  font-weight: 600;
+  background-color: #E1E4E8;
+}
+
+.sidebar-items:hover {
+  background-color: #E1E4E8;
 }
