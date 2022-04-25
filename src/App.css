@@ -17,10 +17,12 @@ input {
 }
 
 i {
-  color: var(--vl-primary-light);
+  color: var(--primary-dark);
 }
 
 .main-container {
   display: flex;
-  border: 1px solid red;
+  /* border: 1px dotted var(--border); */
+  background-color: var(--vl-primary-light);
+  margin-top: 1rem;
 }

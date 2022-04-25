@@ -1,0 +1,17 @@
+.sidebar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 17%;
+  height: 100%;
+
+}
+
+.sidebar-items {
+  display: flex;
+  gap: .5rem;
+  align-items: baseline;
+  font-size: 1rem;
+  cursor: pointer;
+  font-size: .9rem;
+}
