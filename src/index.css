@@ -1,0 +1,13 @@
+:root {
+  --primary-dark: #181818;
+  --primary-light: #F9F9F9;
+  --secondary: #00AA45;
+  --border: rgb(186, 186, 186);
+}
+
+
+body {
+  margin: 0;
+  background-color: var(--primary-light);
+  color: var(--primary-dark)
+}

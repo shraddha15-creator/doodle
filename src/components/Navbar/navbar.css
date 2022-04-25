@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary);
+  font-family: 'Fredoka One',
+    cursive;
+}
+
+.nav-middle {
+  text-align: baseline;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: .1rem 2rem .1rem .3rem;
+}
+
+
+
+.search-input {
+  padding: 0 0.5rem;
+}
+
+.nav-right {
+  display: flex;
+  gap: 2rem;
+}

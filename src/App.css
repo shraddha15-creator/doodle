@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Prompt:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.App {
+  font-family: 'Prompt',
+    sans-serif;
+
+  color: var(--vl-primary-light);
+  display: flex;
+  flex-direction: column;
+  padding: 0 6rem;
+}
+
+textarea,
+input {
+  outline: none;
+  border: none;
+}
+
+i {
+  color: var(--vl-primary-light);
+}
+
+.main-container {
+  display: flex;
+  border: 1px solid red;
+}
