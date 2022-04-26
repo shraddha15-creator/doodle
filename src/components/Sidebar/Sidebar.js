@@ -12,7 +12,7 @@ const Sidebar = () => {
 				}
 			>
 				<div className="sidebar-items">
-					<i class="fas fa-home"></i>
+					<i className="fas fa-home"></i>
 					<span>Home</span>
 				</div>
 			</NavLink>
@@ -23,7 +23,7 @@ const Sidebar = () => {
 				}
 			>
 				<div className="sidebar-items">
-					<i class="fas fa-heart"></i>
+					<i className="fas fa-heart"></i>
 					<span>Liked</span>
 				</div>
 			</NavLink>
@@ -34,7 +34,7 @@ const Sidebar = () => {
 				}
 			>
 				<div className="sidebar-items">
-					<i class="fas fa-photo-video"></i>
+					<i className="fas fa-photo-video"></i>
 					<span>Playlist</span>
 				</div>
 			</NavLink>
@@ -45,7 +45,7 @@ const Sidebar = () => {
 				}
 			>
 				<div className="sidebar-items">
-					<i class="fas fa-clock"></i>
+					<i className="fas fa-clock"></i>
 					<span>Watch Later</span>
 				</div>
 			</NavLink>
@@ -56,7 +56,7 @@ const Sidebar = () => {
 				}
 			>
 				<div className="sidebar-items">
-					<i class="fas fa-history"></i>
+					<i className="fas fa-history"></i>
 					<span>History</span>
 				</div>
 			</NavLink>

@@ -11,7 +11,7 @@ const Navbar = () => {
 			</Link>
 			<div className="nav-middle">
 				<label>
-					<i class="fas fa-search"></i>
+					<i className="fas fa-search"></i>
 					<input className="search-input" placeholder="Search video"></input>
 				</label>
 			</div>
@@ -23,7 +23,7 @@ const Navbar = () => {
 						className="ellipsis"
 						onClick={() => setUserOptions(!userOptions)}
 					>
-						<i class="fas fa-user-circle"></i>
+						<i className="fas fa-user-circle"></i>
 						<div
 							className={`ellipsis-items ${
 								userOptions ? "display-true" : "display-hide"
@@ -31,19 +31,19 @@ const Navbar = () => {
 						>
 							<Link to="/profile" className="elp-items">
 								<div>
-									<i class="fas fa-user-circle icon"></i>
+									<i className="fas fa-user-circle icon"></i>
 									Profile
 								</div>
 							</Link>
 							<Link to="/settings" className="elp-items">
 								<div>
-									<i class="fas fa-cog icon"></i>
+									<i className="fas fa-cog icon"></i>
 									Settings
 								</div>
 							</Link>
 							<Link to="/login" className="elp-items">
 								<div>
-									<i class="fas fa-sign-in-alt icon"></i>
+									<i className="fas fa-sign-in-alt icon"></i>
 									Login
 								</div>
 							</Link>
