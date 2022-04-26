@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./navbar.css";
 
 const Navbar = () => {
+	const [userOptions, setUserOptions] = useState(false);
 	return (
-		<div className="navbar">
+		<nav className="navbar">
 			<Link to="/" className="brand-name">
 				DoodleTv
 			</Link>
@@ -15,12 +16,43 @@ const Navbar = () => {
 				</label>
 			</div>
 			<div className="nav-right">
-				<Link to="/profile" className="nav-right-items">
+				<div className="nav-right-items">
 					<span>Hi, User</span>
-					<i class="fas fa-user-circle"></i>
-				</Link>
+					{/* --------- */}
+					<div
+						className="ellipsis"
+						onClick={() => setUserOptions(!userOptions)}
+					>
+						<i class="fas fa-user-circle"></i>
+						<div
+							className={`ellipsis-items ${
+								userOptions ? "display-true" : "display-hide"
+							}`}
+						>
+							<Link to="/profile" className="elp-items">
+								<div>
+									<i class="fas fa-user-circle icon"></i>
+									Profile
+								</div>
+							</Link>
+							<Link to="/settings" className="elp-items">
+								<div>
+									<i class="fas fa-cog icon"></i>
+									Settings
+								</div>
+							</Link>
+							<Link to="/login" className="elp-items">
+								<div>
+									<i class="fas fa-sign-in-alt icon"></i>
+									Login
+								</div>
+							</Link>
+						</div>
+					</div>
+					{/* --------- */}
+				</div>
 			</div>
-		</div>
+		</nav>
 	);
 };
 

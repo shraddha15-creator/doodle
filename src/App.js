@@ -2,9 +2,12 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Sidebar from "./components/Sidebar/Sidebar";
+import Login from "./pages/Auth/Login/Login";
+import Signup from "./pages/Auth/Signup/Signup";
 import History from "./pages/History/History";
 import Liked from "./pages/Liked/Liked";
 import Playlist from "./pages/Playlist/Playlist";
+import Profile from "./pages/Profile/Profile";
 import VideoListing from "./pages/VideoListing/VideoListing";
 import WatchLater from "./pages/WatchLater/WatchLater";
 
@@ -20,6 +23,9 @@ function App() {
 					<Route path="/liked-videos" element={<Liked />} />
 					<Route path="/watch-later" element={<WatchLater />} />
 					<Route path="/playlist" element={<Playlist />} />
+					<Route path="/profile" element={<Profile />} />
+					<Route path="/login" element={<Login />} />
+					<Route path="/signup" element={<Signup />} />
 				</Routes>
 			</div>
 

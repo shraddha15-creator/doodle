@@ -1,0 +1,63 @@
+.auth-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.auth-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  margin: 1rem;
+  gap: 1.5rem;
+  border: 2px solid var(--primary-dark);
+  border-radius: 5px;
+  box-shadow: 5px 5px 2px black;
+  color: var(--primary-dark);
+  background-color: white;
+}
+
+.auth-inputs {
+  width: 100%;
+}
+
+.auth-inputs fieldset {
+  padding: .5rem;
+  border: 2px solid var(--gray-light);
+}
+
+.auth-inputs fieldset legend {
+  font-size: .8rem;
+}
+
+.auth-inputs fieldset input {
+  width: 94%;
+  padding: .5rem .4rem;
+  border: 1px solid var(--gray-light);
+}
+
+.auth-btn {
+  width: 100%;
+  padding: .5rem 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-outlined {
+  border: 2px solid var(--secondary);
+  background-color: var(--primary-light);
+  color: var(--primary-dark)
+}
+
+.btn-filled {
+  background-color: var(--secondary);
+  color: var(--primary-light);
+  border: none;
+}
+
+.link-signup {
+  color: var(--secondary);
+
+}

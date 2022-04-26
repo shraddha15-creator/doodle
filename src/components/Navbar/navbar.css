@@ -1,9 +1,16 @@
+nav {
+  position: sticky;
+  top: 0;
+  background-color: var(--primary-light);
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
   border-bottom: 1px solid var(--gray-light);
+
 }
 
 .brand-name {
@@ -22,8 +29,6 @@
   padding: .1rem 2rem .1rem .3rem;
 }
 
-
-
 .search-input {
   padding: 0 0.5rem;
 }
@@ -41,4 +46,10 @@
   align-items: baseline;
   text-decoration: none;
   color: var(--primary-dark);
+}
+
+.elp-items {
+  text-decoration: none;
+  /* text-decoration: inherit; */
+  color: var(--primary-light);
 }

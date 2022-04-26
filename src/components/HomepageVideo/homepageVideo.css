@@ -67,6 +67,7 @@ video {
 .text-two {
   color: var(--secondary);
   -webkit-text-stroke: 1px var(--primary-light);
+
 }
 
 .explore-btn {

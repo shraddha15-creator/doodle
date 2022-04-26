@@ -1,0 +1,67 @@
+.single-video-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background-color: var(--gray-light);
+  width: 30%;
+  padding: .4rem;
+  border-radius: 5px;
+}
+
+.single-video-card img {
+  width: 100%;
+}
+
+.video-name-and-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.views-and-date {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ------ellipsis */
+.ellipsis {
+  position: relative;
+  padding: 0 0 0 1rem;
+  cursor: pointer;
+}
+
+.ellipsis-items {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  width: max-content;
+  left: 0rem;
+  background-color: var(--primary-dark);
+  color: var(--primary-light)
+}
+
+.display-true {
+  display: flex;
+}
+
+.display-hide {
+  display: none;
+}
+
+.ellipsis-items div {
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background-color: var(--container-color);
+  font-size: 0.9rem;
+}
+
+.ellipsis-items div:hover {
+  background: var(--container-color-dark);
+}
+
+.icon {
+  color: var(--primary-light);
+  margin-right: 5px;
+}
