@@ -17,7 +17,7 @@ const Sidebar = () => {
 				</div>
 			</NavLink>
 			<NavLink
-				to="liked-videos"
+				to="/likedVideos"
 				className={({ isActive }) =>
 					isActive ? "sidebar-items active" : "sidebar-items"
 				}
@@ -28,7 +28,7 @@ const Sidebar = () => {
 				</div>
 			</NavLink>
 			<NavLink
-				to="playlist"
+				to="/playlist"
 				className={({ isActive }) =>
 					isActive ? "sidebar-items active" : "sidebar-items"
 				}
@@ -39,7 +39,7 @@ const Sidebar = () => {
 				</div>
 			</NavLink>
 			<NavLink
-				to="/watch-later"
+				to="/watchLater"
 				className={({ isActive }) =>
 					isActive ? "sidebar-items active" : "sidebar-items"
 				}

@@ -20,8 +20,8 @@ function App() {
 				<Routes>
 					<Route path="/" element={<VideoListing />} />
 					<Route path="/history" element={<History />} />
-					<Route path="/liked-videos" element={<Liked />} />
-					<Route path="/watch-later" element={<WatchLater />} />
+					<Route path="/likedVideos" element={<Liked />} />
+					<Route path="/watchLater" element={<WatchLater />} />
 					<Route path="/playlist" element={<Playlist />} />
 					<Route path="/profile" element={<Profile />} />
 					<Route path="/login" element={<Login />} />
