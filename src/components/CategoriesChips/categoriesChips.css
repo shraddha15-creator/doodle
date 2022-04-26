@@ -1,0 +1,16 @@
+.categories-chips {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.categories-items {
+  padding: .3rem 1rem;
+  border: 2px solid var(--secondary);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.categories-items:hover {
+  background-color: var(--gray-light);
+}

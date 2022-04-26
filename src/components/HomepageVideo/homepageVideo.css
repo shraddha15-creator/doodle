@@ -1,0 +1,83 @@
+.background-video {
+  z-index: auto;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  height: 94vh;
+  max-height: 60vh;
+  border-radius: 20% 2% 2% 20% / 50% 2% 2% 50%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  background-image: -webkit-gradient(linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.25)),
+      to(rgba(0, 0, 0, 0.25)));
+  background-image: linear-gradient(180deg,
+      rgba(0, 0, 0, 0.25),
+      rgba(0, 0, 0, 0.25));
+}
+
+.w-background-video {
+  position: relative;
+  overflow: hidden;
+  height: 90vh;
+  color: white;
+}
+
+.w-background-video>video {
+  background-size: cover;
+  background-position: 50% 50%;
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  right: -100%;
+  bottom: -100%;
+  top: -100%;
+  left: -100%;
+  object-fit: cover;
+  z-index: -100;
+}
+
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+.text-on-video {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.6rem;
+  align-items: center;
+}
+
+.text-two {
+  color: var(--secondary);
+  -webkit-text-stroke: 1px var(--primary-light);
+}
+
+.explore-btn {
+  background-color: rgba(0, 0, 0, 0.455);
+  outline: none;
+  color: var(--primary-light);
+  border: 2px solid var(--primary-light);
+  padding: .6rem 2rem;
+  border-radius: 5px;
+}
+
+.explore-btn:hover {
+  background-color: rgba(95, 95, 95, 0.455);
+}
