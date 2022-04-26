@@ -50,6 +50,5 @@ nav {
 
 .elp-items {
   text-decoration: none;
-  /* text-decoration: inherit; */
   color: var(--primary-light);
 }
