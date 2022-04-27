@@ -4,8 +4,17 @@ import axios from "axios";
 const VideosContext = createContext();
 
 const VideosProvider = ({ children }) => {
+	const [categories, setCategories] = useState();
 	const [videos, setVideos] = useState([]);
 
+	// Fetch categories function
+	const getCategories = () => {
+		axios
+			.get("./api/categories")
+			.then((res) => setCategories(res.data.categories));
+	};
+
+	// Fetch videos function
 	const getVideos = async () => {
 		try {
 			const response = await axios.get("/api/videos");
@@ -16,11 +25,15 @@ const VideosProvider = ({ children }) => {
 	};
 
 	useEffect(() => {
+		getCategories();
+	}, []);
+
+	useEffect(() => {
 		getVideos();
 	}, []);
 
 	return (
-		<VideosContext.Provider value={{ videos }}>
+		<VideosContext.Provider value={{ categories, videos }}>
 			{children}
 		</VideosContext.Provider>
 	);

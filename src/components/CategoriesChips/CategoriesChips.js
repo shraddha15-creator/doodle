@@ -1,19 +1,10 @@
-import axios from "axios";
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { useVideos } from "../../context/videos-context";
 import "./categoriesChips.css";
 
 const CategoriesChips = () => {
-	const [categories, setCategories] = useState();
+	const { categories } = useVideos();
 
-	const getCategories = () => {
-		axios
-			.get("./api/categories")
-			.then((res) => setCategories(res.data.categories));
-	};
-
-	useEffect(() => {
-		getCategories();
-	}, []);
 	return (
 		<>
 			<div className="categories-chips">
