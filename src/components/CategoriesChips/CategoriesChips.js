@@ -1,15 +1,30 @@
-import React from "react";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import "./categoriesChips.css";
 
 const CategoriesChips = () => {
+	const [categories, setCategories] = useState();
+
+	const getCategories = () => {
+		axios
+			.get("./api/categories")
+			.then((res) => setCategories(res.data.categories));
+	};
+
+	useEffect(() => {
+		getCategories();
+	}, []);
 	return (
 		<>
 			<div className="categories-chips">
-				<h5 className="categories-items">All</h5>
-				<h5 className="categories-items">Figma</h5>
-				<h5 className="categories-items">UI/UX</h5>
-				<h5 className="categories-items">Adobe XD</h5>
-				<h5 className="categories-items">Doodle Art</h5>
+				{categories &&
+					categories.map((category) => {
+						return (
+							<h5 key={category.id} className="categories-items">
+								{category.categoryName}
+							</h5>
+						);
+					})}
 			</div>
 		</>
 	);
