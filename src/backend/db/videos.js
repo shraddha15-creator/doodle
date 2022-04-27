@@ -176,14 +176,14 @@ export const videos = [
 		description:
 			"-- Today, we're going to step into the world of UI/UX design and cover Figma here in 2021. Figma is a UI/UX design and prototyping tool. In this crash course, I'm going to show you how to use Figma to design a website with multiple pages, interactions and animations. ",
 	},
-	// ================== UI UX =======================================================
+	// ================== UI/UX =======================================================
 	// ---------------------------- 11 -----------------------------------------------
 	{
 		id: "It2ON3hAPl0",
 		title:
 			"Ultimate Guide For Self Taught UX/UI Designers! | Design Weekly by Punit Chawla",
 		channel: "Punit Chawla",
-		category: "UI UX",
+		category: "UI/UX",
 		uploadedOn: "10 Months ago",
 		thumbnail:
 			"https://i.ytimg.com/vi/It2ON3hAPl0/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAhbm0zAs6uAZsWyEICrYbIoozAJg",
@@ -200,7 +200,7 @@ export const videos = [
 		id: "YiLUYf4HDh4",
 		title: "Learn UI/UX Design & Figma - 2022 Interactive Crash Course",
 		channel: "DesignCourse",
-		category: "UI UX",
+		category: "UI/UX",
 		uploadedOn: "3 Months ago",
 		thumbnail:
 			"https://i.ytimg.com/vi/YiLUYf4HDh4/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAJwWv8Ao0xMlrCabIaYXKgItGlCQ",
