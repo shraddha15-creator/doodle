@@ -24,6 +24,6 @@ export const categories = [
 	},
 	{
 		_id: uuid(),
-		categoryName: "Doodle Art",
+		categoryName: "Doodle",
 	},
 ];

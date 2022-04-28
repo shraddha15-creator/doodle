@@ -6,6 +6,7 @@ const VideosContext = createContext();
 const VideosProvider = ({ children }) => {
 	const [categories, setCategories] = useState();
 	const [videos, setVideos] = useState([]);
+	const [isActive, setIsActive] = useState(false);
 
 	// Fetch categories function
 	const getCategories = () => {
@@ -24,6 +25,16 @@ const VideosProvider = ({ children }) => {
 		}
 	};
 
+	// Category filter
+	const activeCategoryHandler = (category) => {
+		setIsActive(true);
+		const filteredCategory = videos.filter((vdo) => {
+			return category.categoryName == vdo.category;
+		});
+		setVideos(filteredCategory);
+		setIsActive(!isActive === true);
+	};
+
 	useEffect(() => {
 		getCategories();
 	}, []);
@@ -33,7 +44,13 @@ const VideosProvider = ({ children }) => {
 	}, []);
 
 	return (
-		<VideosContext.Provider value={{ categories, videos }}>
+		<VideosContext.Provider
+			value={{
+				categories,
+				videos,
+				activeCategoryHandler,
+			}}
+		>
 			{children}
 		</VideosContext.Provider>
 	);

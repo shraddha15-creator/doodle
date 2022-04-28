@@ -1,9 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import HeroVideo from "../../assets/hero-video.mp4";
 import "./homepageVideo.css";
 
-const HomepageVideo = () => {
+export const HomepageVideo = () => {
 	return (
 		<>
 			<div className="background-video w-background-video">
@@ -18,5 +17,3 @@ const HomepageVideo = () => {
 		</>
 	);
 };
-
-export default HomepageVideo;

@@ -2,16 +2,19 @@ import React from "react";
 import { useVideos } from "../../context/videos-context";
 import "./categoriesChips.css";
 
-const CategoriesChips = () => {
-	const { categories } = useVideos();
-
+export const CategoriesChips = () => {
+	const { categories, activeCategoryHandler, isActive } = useVideos();
 	return (
 		<>
 			<div className="categories-chips">
 				{categories &&
 					categories.map((category) => {
 						return (
-							<h5 key={category.id} className="categories-items">
+							<h5
+								key={category._id}
+								className={`categories-items ${isActive && "active-category"}`}
+								onClick={() => activeCategoryHandler(category)}
+							>
 								{category.categoryName}
 							</h5>
 						);
@@ -20,5 +23,3 @@ const CategoriesChips = () => {
 		</>
 	);
 };
-
-export default CategoriesChips;

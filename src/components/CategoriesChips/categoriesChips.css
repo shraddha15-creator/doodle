@@ -1,5 +1,6 @@
 .categories-chips {
   display: flex;
+  flex-direction: row;
   gap: 1rem;
   margin: 1rem 0;
 }
@@ -13,4 +14,8 @@
 
 .categories-items:hover {
   background-color: var(--gray-light);
+}
+
+.active-category {
+  background-color: var(--secondary);
 }

@@ -1,8 +1,6 @@
 import React from "react";
 import "./videoListing.css";
-import HomepageVideo from "../../components/HomepageVideo/HomepageVideo";
-import CategoriesChips from "../../components/CategoriesChips/CategoriesChips";
-import VideoCard from "../../components/VideoCard/VideoCard";
+import { HomepageVideo, CategoriesChips, VideoCard } from "../../components";
 import { useVideos } from "../../context/videos-context";
 
 const VideoListing = () => {
@@ -13,19 +11,19 @@ const VideoListing = () => {
 			<CategoriesChips />
 			<div className="videos-container">
 				{videos &&
-					videos.map(({ id, title, thumbnail, channel, views, uploadedOn }) => {
-						return (
+					videos.map(
+						({ _id, title, thumbnail, channel, views, uploadedOn }) => (
 							<VideoCard
-								key={id}
-								id={id}
+								key={_id}
+								id={_id}
 								title={title}
 								thumbnail={thumbnail}
 								channel={channel}
 								views={views}
 								uploadedOn={uploadedOn}
 							/>
-						);
-					})}
+						)
+					)}
 			</div>
 		</div>
 	);

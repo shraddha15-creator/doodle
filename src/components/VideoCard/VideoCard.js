@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import "./videoCard.css";
 
-const VideoCard = ({ id, title, thumbnail, channel, views, uploadedOn }) => {
+export const VideoCard = ({
+	_id,
+	title,
+	thumbnail,
+	channel,
+	views,
+	uploadedOn,
+}) => {
 	const [showEllipsis, setShowEllipsis] = useState(false);
 	return (
 		<>
-			<div className="single-video-card" key={id}>
-				<img src={thumbnail} alt={`img-${id}`} />
+			<div className="single-video-card">
+				<img src={thumbnail} alt={`img-${_id}`} />
 				<div className="video-name-and-menu">
 					<h5>{title}</h5>
 					<div
@@ -39,5 +46,3 @@ const VideoCard = ({ id, title, thumbnail, channel, views, uploadedOn }) => {
 		</>
 	);
 };
-
-export default VideoCard;
