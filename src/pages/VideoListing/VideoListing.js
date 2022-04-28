@@ -1,29 +1,29 @@
 import React from "react";
 import "./videoListing.css";
-import { videos } from "../../backend/db/videos";
-import HomepageVideo from "../../components/HomepageVideo/HomepageVideo";
-import CategoriesChips from "../../components/CategoriesChips/CategoriesChips";
-import VideoCard from "../../components/VideoCard/VideoCard";
+import { HomepageVideo, CategoriesChips, VideoCard } from "../../components";
+import { useVideos } from "../../context/videos-context";
 
 const VideoListing = () => {
+	const { videos } = useVideos();
 	return (
 		<div className="video-page">
 			<HomepageVideo />
 			<CategoriesChips />
 			<div className="videos-container">
 				{videos &&
-					videos.map(({ id, title, thumbnail, channel, views, uploadedOn }) => {
-						return (
+					videos.map(
+						({ _id, title, thumbnail, channel, views, uploadedOn }) => (
 							<VideoCard
-								id={id}
+								key={_id}
+								id={_id}
 								title={title}
 								thumbnail={thumbnail}
 								channel={channel}
 								views={views}
 								uploadedOn={uploadedOn}
 							/>
-						);
-					})}
+						)
+					)}
 			</div>
 		</div>
 	);

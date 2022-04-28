@@ -1,18 +1,25 @@
 import React from "react";
+import { useVideos } from "../../context/videos-context";
 import "./categoriesChips.css";
 
-const CategoriesChips = () => {
+export const CategoriesChips = () => {
+	const { categories, activeCategoryHandler, isActive } = useVideos();
 	return (
 		<>
 			<div className="categories-chips">
-				<h5 className="categories-items">All</h5>
-				<h5 className="categories-items">Figma</h5>
-				<h5 className="categories-items">UI/UX</h5>
-				<h5 className="categories-items">Adobe XD</h5>
-				<h5 className="categories-items">Doodle Art</h5>
+				{categories &&
+					categories.map((category) => {
+						return (
+							<h5
+								key={category._id}
+								className={`categories-items ${isActive && "active-category"}`}
+								onClick={() => activeCategoryHandler(category)}
+							>
+								{category.categoryName}
+							</h5>
+						);
+					})}
 			</div>
 		</>
 	);
 };
-
-export default CategoriesChips;
