@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./videoCard.css";
 
 export const VideoCard = ({
-	_id,
+	id,
 	title,
 	thumbnail,
 	channel,
@@ -13,9 +14,13 @@ export const VideoCard = ({
 	return (
 		<>
 			<div className="single-video-card">
-				<img src={thumbnail} alt={`img-${_id}`} />
+				<Link to={`/watch/${id}`}>
+					<img src={thumbnail} alt={`img-${id}`} />
+				</Link>
 				<div className="video-name-and-menu">
-					<h5>{title}</h5>
+					<Link to={`/watch/${id}`}>
+						<h5 className="vid-title">{title}</h5>
+					</Link>
 					<div
 						className="ellipsis"
 						onClick={() => setShowEllipsis(!showEllipsis)}

@@ -1,3 +1,16 @@
+* {
+  text-decoration: none;
+}
+
+.vid-title {
+  color: var(--primary-dark);
+}
+
+.vid-thumbnail-img,
+.vid-title {
+  cursor: pointer;
+}
+
 .single-video-card {
   display: flex;
   flex-direction: column;
