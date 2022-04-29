@@ -8,6 +8,7 @@ import History from "./pages/History/History";
 import Liked from "./pages/Liked/Liked";
 import Playlist from "./pages/Playlist/Playlist";
 import Profile from "./pages/Profile/Profile";
+import SingleVideo from "./pages/SingleVideo/SingleVideo";
 import VideoListing from "./pages/VideoListing/VideoListing";
 import WatchLater from "./pages/WatchLater/WatchLater";
 
@@ -21,6 +22,7 @@ function App() {
 					<Route path="/" element={<VideoListing />} />
 					<Route path="/history" element={<History />} />
 					<Route path="/likedVideos" element={<Liked />} />
+					<Route path="/watch/:videoId" element={<SingleVideo />} />
 					<Route path="/watchLater" element={<WatchLater />} />
 					<Route path="/playlist" element={<Playlist />} />
 					<Route path="/profile" element={<Profile />} />

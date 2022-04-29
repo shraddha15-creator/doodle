@@ -1,7 +1,7 @@
 import React from "react";
-import "./videoListing.css";
 import { HomepageVideo, CategoriesChips, VideoCard } from "../../components";
 import { useVideos } from "../../context/videos-context";
+import "./videoListing.css";
 
 const VideoListing = () => {
 	const { videos } = useVideos();
@@ -12,15 +12,24 @@ const VideoListing = () => {
 			<div className="videos-container">
 				{videos &&
 					videos.map(
-						({ _id, title, thumbnail, channel, views, uploadedOn }) => (
+						({
+							id,
+							title,
+							thumbnail,
+							channel,
+							views,
+							uploadedOn,
+							channelAvatar,
+						}) => (
 							<VideoCard
-								key={_id}
-								id={_id}
+								key={id}
+								id={id}
 								title={title}
 								thumbnail={thumbnail}
 								channel={channel}
 								views={views}
 								uploadedOn={uploadedOn}
+								channelAvatar={channelAvatar}
 							/>
 						)
 					)}

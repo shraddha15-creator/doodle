@@ -1,0 +1,60 @@
+.single-vid-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 80%;
+  margin-bottom: 3rem;
+}
+
+.video-frame {
+  height: 60vh;
+}
+
+
+.video-detail {
+  color: var(--primary-dark);
+  border-bottom: 1px solid var(--primary-dark);
+}
+
+.single-video-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+
+.views-like-dislike {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.3rem 0;
+}
+
+.views-like-dislike p {
+  font-size: .8rem;
+  font-weight: 500;
+}
+
+.like-save-dislike {
+  display: flex;
+  gap: .7em;
+}
+
+.single-vid-disc {
+  display: flex;
+  flex-direction: column;
+}
+
+.channel-detail {
+  display: flex;
+  align-items: center;
+  gap: .7rem;
+  font-weight: 500;
+}
+
+.channel-avatar {
+  border-radius: 100px;
+}
+
+.video-disc {
+  padding-top: 1rem;
+  font-size: .9rem;
+}

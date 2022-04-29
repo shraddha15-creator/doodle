@@ -34,7 +34,7 @@ export const videos = [
 		likes: "1.4K",
 		subscription: "54K",
 		channelAvatar:
-			"https://i.ytimg.com/vi/F79ZaTL_vA0/hqdefault.jpg?sqp=-oaymwEcCOADEI4CSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD5gBDJ0MOSWANEolsVMXdHKvwxBA",
+			"https://yt3.ggpht.com/ccyiYA12uMCkQfndLE4kOxptvwe405Cm4Sdwx9yv9vx4oVMKMCQmL0kyayTJjAkCMZBeq7KsgIE=s88-c-k-c0x00ffffff-no-rj",
 		description:
 			"Don’t know what to draw? Don’t know how to draw? No worries! In this video I’ll share 50 cute and easy doodles to fill your sketchbook. If you’re bored at school, if you’re a beginner at drawing, I’ll show you step by step how to make every doodle you’ll ever need!",
 	},
