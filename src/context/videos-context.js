@@ -29,10 +29,18 @@ const VideosProvider = ({ children }) => {
 	const activeCategoryHandler = (category) => {
 		setIsActive(true);
 		const filteredCategory = videos.filter((vdo) => {
-			return category.categoryName == vdo.category;
+			return category.categoryName === vdo.category;
 		});
 		setVideos(filteredCategory);
-		setIsActive(!isActive === true);
+
+		setIsActive(() =>
+			categories.find((chip) => {
+				return chip.categoryName === category.categoryName
+					? chip.categoryName
+					: category.categoryName;
+			})
+		);
+		// setIsActive(!isActive === true);
 	};
 
 	useEffect(() => {
@@ -49,6 +57,8 @@ const VideosProvider = ({ children }) => {
 				categories,
 				videos,
 				activeCategoryHandler,
+				isActive,
+				setIsActive,
 			}}
 		>
 			{children}
