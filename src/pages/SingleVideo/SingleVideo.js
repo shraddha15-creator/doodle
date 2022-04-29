@@ -21,6 +21,7 @@ const SingleVideo = () => {
 						url={`https://www.youtube.com/embed/${video.id} `}
 						width="100%"
 						height="100%"
+						controls="true"
 					/>
 				</div>
 
