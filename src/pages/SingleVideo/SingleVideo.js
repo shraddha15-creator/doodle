@@ -1,4 +1,5 @@
 import React from "react";
+import ReactPlayer from "react-player";
 import { useParams } from "react-router-dom";
 import { useVideos } from "../../context/videos-context";
 import "./singleVid.css";
@@ -14,9 +15,15 @@ const SingleVideo = () => {
 	return (
 		<>
 			<div className="single-vid-card">
-				<div className="video-frame">
-					<iframe src={`https://www.youtube.com/embed/${video.id} `}></iframe>
+				<div className="player-wrapper">
+					<ReactPlayer
+						className="react-player"
+						url={`https://www.youtube.com/embed/${video.id} `}
+						width="100%"
+						height="100%"
+					/>
 				</div>
+
 				<div className="video-detail">
 					<p className="single-video-title">{video.title}</p>
 					<div className="views-like-dislike">
