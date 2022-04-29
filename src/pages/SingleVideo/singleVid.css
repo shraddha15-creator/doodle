@@ -58,3 +58,8 @@
   padding-top: 1rem;
   font-size: .9rem;
 }
+
+iFrame {
+  width: 100%;
+  height: 100%;
+}

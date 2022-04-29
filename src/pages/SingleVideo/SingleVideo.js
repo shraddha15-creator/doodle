@@ -15,14 +15,7 @@ const SingleVideo = () => {
 		<>
 			<div className="single-vid-card">
 				<div className="video-frame">
-					<iframe
-						width="100%"
-						height="100%"
-						src={`https://www.youtube.com/embed/${video.id} `}
-						frameBorder="0"
-						allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-						allowFullScreen=""
-					></iframe>
+					<iframe src={`https://www.youtube.com/embed/${video.id} `}></iframe>
 				</div>
 				<div className="video-detail">
 					<p className="single-video-title">{video.title}</p>
