@@ -28,8 +28,10 @@ const Navbar = () => {
 			</div>
 			<div className="nav-right">
 				<div className="nav-right-items">
-					<Link to="/login">
-						<span>{user ? user.userDetails.firstName : "USER"}</span>
+					<Link to="/profile">
+						<span className="greetUser">
+							Hi, {user ? user.userDetails.firstName : "user"}
+						</span>
 					</Link>
 					<div
 						className="ellipsis"

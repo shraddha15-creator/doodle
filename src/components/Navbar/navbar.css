@@ -52,3 +52,8 @@ nav {
   text-decoration: none;
   color: var(--primary-light);
 }
+
+.greetUser {
+  color: var(--primary-dark);
+  font-weight: 500;
+}
