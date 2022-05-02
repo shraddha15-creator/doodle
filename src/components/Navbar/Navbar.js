@@ -29,8 +29,7 @@ const Navbar = () => {
 			<div className="nav-right">
 				<div className="nav-right-items">
 					<Link to="/login">
-						{/* <span>Hi,{user.userDetails.firstName} </span> */}
-						<span>Hi, User</span>
+						<span>{user ? user.userDetails.firstName : "USER"}</span>
 					</Link>
 					<div
 						className="ellipsis"
@@ -54,7 +53,7 @@ const Navbar = () => {
 									Settings
 								</div>
 							</Link>
-							{/* {user.isLoggedIn ? (
+							{user && user.isLoggedIn ? (
 								<div onClick={logoutHandler}>
 									<i className="fas fa-sign-in-alt icon"></i>
 									Logout
@@ -66,7 +65,7 @@ const Navbar = () => {
 										Login
 									</div>
 								</Link>
-							)} */}
+							)}
 						</div>
 					</div>
 				</div>
