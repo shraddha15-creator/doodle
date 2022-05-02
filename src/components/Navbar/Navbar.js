@@ -1,9 +1,20 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/auth-context";
 import "./navbar.css";
 
 const Navbar = () => {
+	const navigate = useNavigate();
+	const { user, setUser } = useAuth();
 	const [userOptions, setUserOptions] = useState(false);
+
+	const logoutHandler = () => {
+		localStorage.removeItem("token");
+		localStorage.removeItem("userDetails");
+		setUser({ token: "", userDetails: "", isLoggedIn: false });
+		navigate("/");
+	};
+
 	return (
 		<nav className="navbar">
 			<Link to="/" className="brand-name">
@@ -17,8 +28,11 @@ const Navbar = () => {
 			</div>
 			<div className="nav-right">
 				<div className="nav-right-items">
-					<span>Hi, User</span>
-					{/* --------- */}
+					<Link to="/profile">
+						<span className="greetUser">
+							Hi, {user ? user.userDetails.firstName : "user"}
+						</span>
+					</Link>
 					<div
 						className="ellipsis"
 						onClick={() => setUserOptions(!userOptions)}
@@ -41,15 +55,21 @@ const Navbar = () => {
 									Settings
 								</div>
 							</Link>
-							<Link to="/login" className="elp-items">
-								<div>
+							{user && user.isLoggedIn ? (
+								<div onClick={logoutHandler}>
 									<i className="fas fa-sign-in-alt icon"></i>
-									Login
+									Logout
 								</div>
-							</Link>
+							) : (
+								<Link to="/login" className="elp-items">
+									<div>
+										<i className="fas fa-sign-in-alt icon"></i>
+										Login
+									</div>
+								</Link>
+							)}
 						</div>
 					</div>
-					{/* --------- */}
 				</div>
 			</div>
 		</nav>

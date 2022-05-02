@@ -43,6 +43,7 @@
   padding: .5rem 2rem;
   border-radius: 5px;
   cursor: pointer;
+  margin: .2rem 0;
 }
 
 .btn-outlined {
