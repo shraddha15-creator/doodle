@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useVideos } from "../../context/videos-context";
 import "./singleVid.css";
 
-const SingleVideo = () => {
+export const SingleVideo = () => {
 	const { videoId } = useParams();
 	const { videos } = useVideos();
 	const getSingleVideo = (videos, videoId) => {
@@ -54,5 +54,3 @@ const SingleVideo = () => {
 		</>
 	);
 };
-
-export default SingleVideo;

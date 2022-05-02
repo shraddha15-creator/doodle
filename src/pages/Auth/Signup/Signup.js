@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/auth-context";
 import "../auth.css";
 
-const Signup = () => {
+export const Signup = () => {
 	const navigate = useNavigate();
 	const { setUser } = useAuth();
 	const [userSignupData, setUserSignupData] = useState({
@@ -150,5 +150,3 @@ const Signup = () => {
 		</>
 	);
 };
-
-export default Signup;

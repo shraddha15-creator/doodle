@@ -1,16 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
-import Navbar from "./components/Navbar/Navbar";
-import Sidebar from "./components/Sidebar/Sidebar";
-import Login from "./pages/Auth/Login/Login";
-import Signup from "./pages/Auth/Signup/Signup";
-import History from "./pages/History/History";
-import Liked from "./pages/Liked/Liked";
-import Playlist from "./pages/Playlist/Playlist";
-import Profile from "./pages/Profile/Profile";
-import SingleVideo from "./pages/SingleVideo/SingleVideo";
-import VideoListing from "./pages/VideoListing/VideoListing";
-import WatchLater from "./pages/WatchLater/WatchLater";
+import { Navbar, Sidebar } from "./components";
+import { Login, Signup } from "./pages/Auth";
+import {
+	History,
+	Liked,
+	Playlist,
+	Profile,
+	SingleVideo,
+	VideoListing,
+	WatchLater,
+} from "./pages";
 
 function App() {
 	return (

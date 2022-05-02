@@ -1,7 +1,5 @@
 import React from "react";
 
-const WatchLater = () => {
+export const WatchLater = () => {
 	return <div>WatchLater</div>;
 };
-
-export default WatchLater;

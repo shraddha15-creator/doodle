@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../../../context/auth-context";
 import "../auth.css";
 
-const Login = () => {
+export const Login = () => {
 	const navigate = useNavigate();
 	const location = useLocation();
 	const from = location?.state?.from?.pathname || "/";
@@ -110,5 +110,3 @@ const Login = () => {
 		</>
 	);
 };
-
-export default Login;

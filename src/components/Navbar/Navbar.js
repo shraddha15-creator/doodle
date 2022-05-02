@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import "./navbar.css";
 
-const Navbar = () => {
+export const Navbar = () => {
 	const navigate = useNavigate();
 	const { user, setUser } = useAuth();
 	const [userOptions, setUserOptions] = useState(false);
@@ -75,5 +75,3 @@ const Navbar = () => {
 		</nav>
 	);
 };
-
-export default Navbar;

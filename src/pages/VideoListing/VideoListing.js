@@ -3,7 +3,7 @@ import { HomepageVideo, CategoriesChips, VideoCard } from "../../components";
 import { useVideos } from "../../context/videos-context";
 import "./videoListing.css";
 
-const VideoListing = () => {
+export const VideoListing = () => {
 	const { videos } = useVideos();
 	return (
 		<div className="video-page">
@@ -37,5 +37,3 @@ const VideoListing = () => {
 		</div>
 	);
 };
-
-export default VideoListing;

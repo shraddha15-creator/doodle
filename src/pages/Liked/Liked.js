@@ -1,7 +1,5 @@
 import React from "react";
 
-const Liked = () => {
+export const Liked = () => {
 	return <>Liked Videos</>;
 };
-
-export default Liked;
