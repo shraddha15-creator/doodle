@@ -24,7 +24,6 @@ const Signup = () => {
 				email,
 				password,
 			});
-			console.log(response);
 			localStorage.setItem("token", response.data.encodedToken);
 			localStorage.setItem(
 				"userDetails",
