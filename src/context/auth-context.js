@@ -14,8 +14,7 @@ const AuthProvider = ({ children }) => {
 				? setUser({ token: token, userDetails: userDetails, isLoggedIn: true })
 				: setUser({ token: "", userDetails: "?", isLoggedIn: false });
 		})();
-	}, [user]);
-	console.log(user);
+	}, []);
 
 	return (
 		<AuthContext.Provider value={{ user, setUser }}>
