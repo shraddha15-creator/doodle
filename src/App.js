@@ -11,6 +11,7 @@ import {
 	VideoListing,
 	WatchLater,
 } from "./pages";
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
 	return (
@@ -20,14 +21,50 @@ function App() {
 				<Sidebar />
 				<Routes>
 					<Route path="/" element={<VideoListing />} />
-					<Route path="/history" element={<History />} />
-					<Route path="/likedVideos" element={<Liked />} />
 					<Route path="/watch/:videoId" element={<SingleVideo />} />
-					<Route path="/watchLater" element={<WatchLater />} />
-					<Route path="/playlist" element={<Playlist />} />
-					<Route path="/profile" element={<Profile />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/signup" element={<Signup />} />
+
+					<Route
+						path="/history"
+						element={
+							<PrivateRoute>
+								<History />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/likedVideos"
+						element={
+							<PrivateRoute>
+								<Liked />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/watchLater"
+						element={
+							<PrivateRoute>
+								<WatchLater />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/playlist"
+						element={
+							<PrivateRoute>
+								<Playlist />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/profile"
+						element={
+							<PrivateRoute>
+								<Profile />
+							</PrivateRoute>
+						}
+					/>
 				</Routes>
 			</div>
 
