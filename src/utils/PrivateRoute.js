@@ -5,7 +5,6 @@ import { useAuth } from "../context/auth-context";
 const PrivateRoute = ({ children }) => {
 	const location = useLocation();
 	const { user } = useAuth();
-	console.log(user);
 	return user.token ? (
 		children
 	) : (

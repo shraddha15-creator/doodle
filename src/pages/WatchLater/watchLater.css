@@ -1,0 +1,75 @@
+.watch-later-container {
+  width: 100%;
+}
+
+.watch-later-video {
+  display: flex;
+  justify-content: space-between;
+  /* height: 15vh; */
+  padding: .7rem;
+  /* background-color: var(--gray-light); */
+  border: 1px solid var(--gray-light);
+  margin: .3rem 0;
+}
+
+.video-and-details {
+  display: flex;
+  gap: 1rem;
+  height: 15vh;
+
+}
+
+.watch-later-title {
+  font-weight: 600;
+  /* font-size: .8em; */
+}
+
+.watch-later-channel {
+  font-weight: 500;
+  font-size: .7em;
+  color: var(--gray-dark);
+}
+
+
+/* ------ellipsis */
+.ellipsis {
+  position: relative;
+  padding: 0 0 0 1rem;
+  cursor: pointer;
+}
+
+.ellipsis-items {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+  width: max-content;
+  left: 0rem;
+  background-color: var(--primary-dark);
+  color: var(--primary-light)
+}
+
+.display-true {
+  display: flex;
+}
+
+.display-hide {
+  display: none;
+}
+
+.ellipsis-items div {
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.8rem;
+  background-color: var(--container-color);
+  font-size: 0.9rem;
+}
+
+.ellipsis-items div:hover {
+  background: var(--container-color-dark);
+}
+
+.icon {
+  color: var(--primary-light);
+  margin-right: 5px;
+}
