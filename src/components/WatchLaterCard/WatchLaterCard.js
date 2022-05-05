@@ -1,8 +1,6 @@
 import React, { useState } from "react";
-import { useVideos } from "../../context/videos-context";
 
 export const WatchLaterCard = ({ video }) => {
-	const { videos } = useVideos();
 	const [showEllipsis, setShowEllipsis] = useState(false);
 
 	return (
