@@ -11,28 +11,7 @@ export const VideoListing = () => {
 			<CategoriesChips />
 			<div className="videos-container">
 				{videos &&
-					videos.map(
-						({
-							id,
-							title,
-							thumbnail,
-							channel,
-							views,
-							uploadedOn,
-							channelAvatar,
-						}) => (
-							<VideoCard
-								key={id}
-								id={id}
-								title={title}
-								thumbnail={thumbnail}
-								channel={channel}
-								views={views}
-								uploadedOn={uploadedOn}
-								channelAvatar={channelAvatar}
-							/>
-						)
-					)}
+					videos.map((video) => <VideoCard key={video.id} video={video} />)}
 			</div>
 		</div>
 	);
