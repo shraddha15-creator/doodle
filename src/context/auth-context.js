@@ -2,7 +2,7 @@ import { useState, useEffect, createContext, useContext } from "react";
 
 const AuthContext = createContext({ token: null, user: null });
 
-const AuthProvider = ({ children }) => {
+export const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState();
 
 	useEffect(() => {
@@ -23,5 +23,4 @@ const AuthProvider = ({ children }) => {
 	);
 };
 
-const useAuth = () => useContext(AuthContext);
-export { useAuth, AuthProvider };
+export const useAuth = () => useContext(AuthContext);

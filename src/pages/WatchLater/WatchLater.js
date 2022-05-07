@@ -1,20 +1,27 @@
 import React from "react";
+import { Navigate, useLocation } from "react-router-dom";
 import { WatchLaterCard } from "../../components";
-import { useVideos } from "../../context/videos-context";
+import { useAuth, useWatchLater } from "../../context";
 import "./watchLater.css";
 
 export const WatchLater = () => {
-	const { videos } = useVideos();
+	const location = useLocation();
+	const { watchLaterState } = useWatchLater();
+	const { watchLater } = watchLaterState;
 
-	return (
+	const { user } = useAuth();
+
+	return user.token ? (
 		<div className="watch-later-container">
 			<h4>Watch Later</h4>
-			<h6>( {videos.length} Videos )</h6>
+			{/* <h6>( {watchLater.length} Videos )</h6> */}
 
-			{videos &&
-				videos.map((video) => {
+			{watchLater &&
+				watchLater.map((video) => {
 					return <WatchLaterCard video={video} key={video.id} />;
 				})}
 		</div>
+	) : (
+		<Navigate to="/login" state={{ from: location?.pathname }} replace />
 	);
 };

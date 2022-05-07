@@ -3,7 +3,7 @@ import axios from "axios";
 
 const VideosContext = createContext();
 
-const VideosProvider = ({ children }) => {
+export const VideosProvider = ({ children }) => {
 	const [categories, setCategories] = useState();
 	const [videos, setVideos] = useState([]);
 	const [isActive, setIsActive] = useState(false);
@@ -66,6 +66,4 @@ const VideosProvider = ({ children }) => {
 	);
 };
 
-const useVideos = () => useContext(VideosContext);
-
-export { VideosProvider, useVideos };
+export const useVideos = () => useContext(VideosContext);

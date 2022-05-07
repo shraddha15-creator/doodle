@@ -5,7 +5,7 @@ import { useAuth } from "../context/auth-context";
 const PrivateRoute = ({ children }) => {
 	const location = useLocation();
 	const { user } = useAuth();
-	return user.token ? (
+	return user && user.token ? (
 		children
 	) : (
 		<Navigate to="/login" state={{ from: location?.pathname }} replace />

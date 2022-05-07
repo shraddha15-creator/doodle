@@ -1,25 +1,23 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth, useWatchLater } from "../../context";
+import { addToWatchLater } from "../../services/addToWatchLater";
 import "./videoCard.css";
 
-export const VideoCard = ({
-	id,
-	title,
-	thumbnail,
-	channel,
-	views,
-	uploadedOn,
-}) => {
+export const VideoCard = ({ video }) => {
+	const { user } = useAuth();
+	const navigate = useNavigate();
+	const { watchLaterDispatch } = useWatchLater();
 	const [showEllipsis, setShowEllipsis] = useState(false);
 	return (
 		<>
 			<div className="single-video-card">
-				<Link to={`/watch/${id}`}>
-					<img src={thumbnail} alt={`img-${id}`} />
+				<Link to={`/watch/${video.id}`}>
+					<img src={video.thumbnail} alt={`img-${video.id}`} />
 				</Link>
 				<div className="video-name-and-menu">
-					<Link to={`/watch/${id}`}>
-						<h5 className="vid-title">{title}</h5>
+					<Link to={`/watch/${video.id}`}>
+						<h5 className="vid-title">{video.title}</h5>
 					</Link>
 					<div
 						className="ellipsis"
@@ -31,7 +29,13 @@ export const VideoCard = ({
 								showEllipsis ? "display-true" : "display-hide"
 							}`}
 						>
-							<div>
+							<div
+								onClick={() =>
+									user.token
+										? addToWatchLater(video, watchLaterDispatch)
+										: navigate("/login")
+								}
+							>
 								<i className="fas fa-clock icon"></i>
 								Add to Watch Later
 							</div>
@@ -42,10 +46,10 @@ export const VideoCard = ({
 						</div>
 					</div>
 				</div>
-				<h6 className="video-channel">{channel}</h6>
+				<h6 className="video-channel">{video.channel}</h6>
 				<div className="views-and-date">
-					<h6>{views}</h6>
-					<h6>{uploadedOn}</h6>
+					<h6>{video.views}</h6>
+					<h6>{video.uploadedOn}</h6>
 				</div>
 			</div>
 		</>

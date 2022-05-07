@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useWatchLater } from "../../context/watchlater-context";
+import { deleteFromWatchLater } from "../../services/deleteFromWatchLater";
 
 export const WatchLaterCard = ({ video }) => {
 	const [showEllipsis, setShowEllipsis] = useState(false);
+	const { watchLaterDispatch } = useWatchLater();
 
 	return (
 		<>
@@ -23,7 +26,9 @@ export const WatchLaterCard = ({ video }) => {
 							showEllipsis ? "display-true" : "display-hide"
 						}`}
 					>
-						<div>
+						<div
+							onClick={() => deleteFromWatchLater(video.id, watchLaterDispatch)}
+						>
 							<i className="fas fa-clock icon"></i>
 							Remove from Watch Later
 						</div>
