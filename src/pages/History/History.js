@@ -21,7 +21,7 @@ export const History = () => {
 			const res = await axios.get("/api/user/history", {
 				headers: { authorization: encodedToken },
 			});
-			setHistoryVideos(res.data.history);
+			setHistoryVideos(res.data.history.reverse());
 		} catch (error) {
 			console.error("error while getting history", error);
 		}
