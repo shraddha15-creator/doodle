@@ -10,7 +10,7 @@ export const deleteFromWatchLater = async (id, watchLaterDispatch) => {
 		});
 		watchLaterDispatch({
 			type: "DELETE_FROM_WATCH_LATER",
-			payload: data.data.watchlater,
+			payload: data.watchlater,
 		});
 	} catch (error) {
 		console.error("ERROR WHILE DELETING FROM WATCH LATER", error);
