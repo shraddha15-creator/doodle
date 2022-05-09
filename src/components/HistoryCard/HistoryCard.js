@@ -4,8 +4,6 @@ import { useAuth, useHistory, useWatchLater } from "../../context";
 import { addToWatchLater } from "../../services/addToWatchLater";
 import { deleteFromHistory } from "../../services/deleteFromHistory";
 
-import "./historycard.css";
-
 const HistoryCard = ({ video }) => {
 	const navigate = useNavigate();
 	const { user } = useAuth();
