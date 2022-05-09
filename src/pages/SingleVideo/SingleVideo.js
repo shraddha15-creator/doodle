@@ -1,5 +1,5 @@
 import React from "react";
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/youtube";
 import { useParams } from "react-router-dom";
 import { useVideos } from "../../context/videos-context";
 import "./singleVid.css";
@@ -21,7 +21,7 @@ export const SingleVideo = () => {
 						url={`https://www.youtube.com/embed/${video.id} `}
 						width="100%"
 						height="100%"
-						controls="true"
+						controls={true}
 					/>
 				</div>
 
@@ -30,9 +30,9 @@ export const SingleVideo = () => {
 					<div className="views-like-dislike">
 						<p>56 views || Oct 12 2021</p>
 						<div className="like-save-dislike">
-							<i class="far fa-thumbs-up"></i>
-							<i class="far fa-thumbs-down"></i>
-							<i class="far fa-bookmark"></i>
+							<i className="far fa-thumbs-up"></i>
+							<i className="far fa-thumbs-down"></i>
+							<i className="far fa-bookmark"></i>
 						</div>
 					</div>
 				</div>

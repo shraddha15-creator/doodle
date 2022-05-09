@@ -1,0 +1,47 @@
+.history-container {
+  width: 100%;
+}
+
+.no-history {
+  display: flex;
+  justify-content: center;
+}
+
+/* = */
+
+.history-video {
+  display: flex;
+  justify-content: space-between;
+  padding: .7rem;
+  background-color: var(--gray-light);
+  border-radius: 5px;
+  margin: .3rem 0;
+}
+
+.video-and-details {
+  display: flex;
+  gap: 1rem;
+  height: 15vh;
+
+}
+
+.history-title {
+  font-weight: 600;
+  /* font-size: .8em; */
+}
+
+.history-channel {
+  font-weight: 500;
+  font-size: .7em;
+  color: var(--gray-dark);
+}
+
+.history-description {
+  font-size: .6rem;
+  font-weight: 400;
+  color: var(--gray-dark);
+}
+
+.ellipsis-items {
+  left: -12rem;
+}
