@@ -1,23 +1,42 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth, useWatchLater } from "../../context";
+import { useAuth, useWatchLater, useHistory } from "../../context";
 import { addToWatchLater } from "../../services/addToWatchLater";
+import { addToHistory } from "../../services/addToHistory";
 import "./videoCard.css";
 
 export const VideoCard = ({ video }) => {
 	const { user } = useAuth();
 	const navigate = useNavigate();
 	const { watchLaterDispatch } = useWatchLater();
+	const { historyDispatch } = useHistory();
 	const [showEllipsis, setShowEllipsis] = useState(false);
 	return (
 		<>
 			<div className="single-video-card">
 				<Link to={`/watch/${video.id}`}>
-					<img src={video.thumbnail} alt={`img-${video.id}`} />
+					<img
+						src={video.thumbnail}
+						alt={`img-${video.id}`}
+						onClick={() =>
+							user.token
+								? addToHistory(video, historyDispatch)
+								: navigate("/login")
+						}
+					/>
 				</Link>
 				<div className="video-name-and-menu">
 					<Link to={`/watch/${video.id}`}>
-						<h5 className="vid-title">{video.title}</h5>
+						<h5
+							className="vid-title"
+							onClick={() =>
+								user.token
+									? addToHistory(video, historyDispatch)
+									: navigate("/login")
+							}
+						>
+							{video.title}
+						</h5>
 					</Link>
 					<div
 						className="ellipsis"
