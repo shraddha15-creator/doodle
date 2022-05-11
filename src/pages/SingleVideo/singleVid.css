@@ -6,6 +6,10 @@
   margin-bottom: 3rem;
 }
 
+.liked-icon {
+  color: red
+}
+
 .video-frame {
   /* height: 60vh; */
 }

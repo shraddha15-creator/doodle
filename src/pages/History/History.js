@@ -33,9 +33,12 @@ export const History = () => {
 
 	return user.token ? (
 		<div className="history-container">
-			<h4>Watch history</h4>
+			<div className="title-button">
+				<h4>Watch history</h4>
+				<button className="clear-button">Clear History</button>
+			</div>
 			<div>
-				{history && history.length == 0 ? (
+				{history && history.length === 0 ? (
 					<h4 className="no-history">No history available</h4>
 				) : (
 					historyVideos &&

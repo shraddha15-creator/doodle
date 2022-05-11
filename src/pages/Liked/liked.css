@@ -1,0 +1,36 @@
+.liked-container {
+  width: 100%;
+}
+
+.title-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clear-button {
+  background-color: var(--secondary);
+  border: 2px solid var(--secondary);
+  color: white;
+  padding: .5rem .8rem;
+  /* border: none; */
+  border-radius: 5px;
+}
+
+.liked-video-card {
+  width: 20%;
+  background-color: var(--gray-light);
+  padding: .5rem;
+  border-radius: 5px;
+}
+
+.liked-video-card img {
+  width: 100%;
+}
+
+.liked-videos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  padding-top: .5rem;
+}
