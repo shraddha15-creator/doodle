@@ -13,7 +13,6 @@ export const removeFromLikes = async (
 		const response = await axios.delete(`/api/user/likes/${video.id}`, {
 			headers: { authorization: encodedToken },
 		});
-		console.log(response);
 		likesDispatch({
 			type: "DELETE_FROM_LIKE",
 			payload: response.data.likes,

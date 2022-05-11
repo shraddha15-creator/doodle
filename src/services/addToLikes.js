@@ -10,7 +10,6 @@ export const addToLikes = async (video, isLiked, setIsLiked, likesDispatch) => {
 			{ video },
 			{ headers: { authorization: encodedToken } }
 		);
-		console.log("adding to likes", response);
 		likesDispatch({
 			type: "ADD_TO_LIKES",
 			payload: response.data.likes,
