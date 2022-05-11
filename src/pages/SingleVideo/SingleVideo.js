@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import { useParams } from "react-router-dom";
-import { useLikes } from "../../context/likes-context";
-import { useVideos } from "../../context/videos-context";
+import { useLikes, useVideos } from "../../context";
 import { addToLikes } from "../../services/addToLikes";
 import { removeFromLikes } from "../../services/removeFromLikes";
 import "./singleVid.css";

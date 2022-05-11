@@ -2,13 +2,7 @@ import axios from "axios";
 import { token } from "./token";
 
 const encodedToken = token();
-export const removeFromLikes = async (
-	video,
-	likesState,
-	isLiked,
-	setIsLiked,
-	likesDispatch
-) => {
+export const removeFromLikes = async (video, likesDispatch) => {
 	try {
 		const response = await axios.delete(`/api/user/likes/${video.id}`, {
 			headers: { authorization: encodedToken },

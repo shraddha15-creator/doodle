@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export const LikedVideoCard = ({ video }) => {
-	// const { id, thumbnail, title } = video;
-
-	// console.log("from video card", id, thumbnail, title);
 	const [showEllipsis, setShowEllipsis] = useState(false);
 
 	return (
