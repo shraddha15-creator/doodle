@@ -1,51 +1,50 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Navigate, useLocation } from "react-router-dom";
+import { LikedVideoCard } from "../../components";
+import { useAuth, useLikes } from "../../context";
+import { token } from "../../services/token";
+import "./liked.css";
+
+const encodedToken = token();
 
 export const Liked = () => {
-	const [showEllipsis, setShowEllipsis] = useState(false);
+	const location = useLocation();
+	const { user } = useAuth();
+	const { likesState } = useLikes();
 
-	return (
-		<>
-			<div className="single-video-card">
-				<Link to={`/watch`}>
-					<img
-						src="https://i.ytimg.com/vi/EGLXOVhxLco/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBwIHbKYPuFIWwsFvTiCawjRGIKRA"
-						alt={`img-12`}
-					/>
-				</Link>
-				<div className="video-name-and-menu">
-					<Link to={`/watch`}>
-						<h5 className="vid-title">
-							Doodle for Beginners | Draw step by step With Me
-						</h5>
-					</Link>
-					<div
-						className="ellipsis"
-						onClick={() => setShowEllipsis(!showEllipsis)}
-					>
-						<i className="fa fa-ellipsis-v"></i>
-						<div
-							className={`ellipsis-items ${
-								showEllipsis ? "display-true" : "display-hide"
-							}`}
-						>
-							<div>
-								<i className="fas fa-clock icon"></i>
-								Add to Watch Later
-							</div>
-							<div>
-								<i className="fas fa-photo-video icon"></i>
-								Add to Playlist
-							</div>
-						</div>
-					</div>
-				</div>
-				<h6 className="video-channel">Artisty</h6>
-				<div className="views-and-date">
-					<h6>12K</h6>
-					<h6>1 Years ago</h6>
-				</div>
+	const [likedVideos, setLikedVideos] = useState([]);
+
+	const getLikesData = async () => {
+		try {
+			const response = await axios.get("/api/user/likes", {
+				headers: { authorization: encodedToken },
+			});
+			setLikedVideos(response.data.likes);
+		} catch (error) {
+			console.error("ERROR WHILE GETTNG LIKED VIDEOS");
+		}
+	};
+
+	useEffect(() => {
+		getLikesData();
+	}, []);
+
+	return user.token ? (
+		<div className="liked-container">
+			<h4>Liked videos</h4>
+			<div className="liked-videos">
+				{likesState.likes && likesState.likes.length === 0 ? (
+					<h4 className="no-history">You havn't liked any video yet!</h4>
+				) : (
+					likedVideos &&
+					likedVideos.map((video) => {
+						return <LikedVideoCard key={video.id} video={video} />;
+					})
+				)}
 			</div>
-		</>
+		</div>
+	) : (
+		<Navigate to="/login" state={{ from: location?.pathname }} replace />
 	);
 };

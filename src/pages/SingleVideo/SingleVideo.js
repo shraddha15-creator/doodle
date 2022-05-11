@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import { useParams } from "react-router-dom";
+import { useLikes } from "../../context/likes-context";
 import { useVideos } from "../../context/videos-context";
+import { addToLikes } from "../../services/addToLikes";
+import { removeFromLikes } from "../../services/removeFromLikes";
 import "./singleVid.css";
 
 export const SingleVideo = () => {
@@ -11,6 +14,9 @@ export const SingleVideo = () => {
 		return videos.find((video) => video.id === videoId);
 	};
 	const video = getSingleVideo(videos, videoId);
+
+	const { likesState, likesDispatch } = useLikes();
+	const [isLiked, setIsLiked] = useState(false);
 
 	return (
 		<>
@@ -30,8 +36,29 @@ export const SingleVideo = () => {
 					<div className="views-like-dislike">
 						<p>56 views || Oct 12 2021</p>
 						<div className="like-save-dislike">
-							<i className="far fa-thumbs-up"></i>
-							<i className="far fa-thumbs-down"></i>
+							{isLiked ? (
+								<i
+									className="fas fa-thumbs-up liked-icon"
+									onClick={() =>
+										removeFromLikes(
+											video,
+											likesState,
+											isLiked,
+											setIsLiked,
+											likesDispatch
+										)
+									}
+								></i>
+							) : (
+								<i
+									className="far fa-thumbs-up "
+									onClick={() =>
+										addToLikes(video, isLiked, setIsLiked, likesDispatch)
+									}
+								></i>
+							)}
+
+							{/* <i className="far fa-thumbs-down"></i> */}
 							<i className="far fa-bookmark"></i>
 						</div>
 					</div>
