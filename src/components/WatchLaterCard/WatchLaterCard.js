@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { useWatchLater } from "../../context/watchlater-context";
-import { deleteFromWatchLater } from "../../services/deleteFromWatchLater";
+import { useWatchLater } from "../../context";
+import { deleteFromWatchLater } from "../../services";
 
 export const WatchLaterCard = ({ video }) => {
 	const [showEllipsis, setShowEllipsis] = useState(false);

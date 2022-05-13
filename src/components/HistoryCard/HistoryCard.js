@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth, useHistory, useWatchLater } from "../../context";
-import { addToWatchLater } from "../../services/addToWatchLater";
-import { deleteFromHistory } from "../../services/deleteFromHistory";
+import { addToWatchLater, deleteFromHistory } from "../../services";
 
 const HistoryCard = ({ video }) => {
 	const navigate = useNavigate();

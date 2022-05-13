@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import ReactPlayer from "react-player/youtube";
 import { useParams } from "react-router-dom";
 import { useLikes, useVideos } from "../../context";
-import { addToLikes } from "../../services/addToLikes";
-import { removeFromLikes } from "../../services/removeFromLikes";
+import { addToLikes, removeFromLikes } from "../../services";
 import "./singleVid.css";
 
 export const SingleVideo = () => {

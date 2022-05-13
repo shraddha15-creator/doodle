@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth, useWatchLater, useHistory } from "../../context";
-import { addToWatchLater } from "../../services/addToWatchLater";
-import { addToHistory } from "../../services/addToHistory";
+import { addToWatchLater, addToHistory } from "../../services";
 import "./videoCard.css";
 
 export const VideoCard = ({ video }) => {

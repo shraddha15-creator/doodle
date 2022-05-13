@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import { LikedVideoCard } from "../../components";
 import { useAuth, useLikes } from "../../context";
-import { token } from "../../services/token";
+import { token } from "../../services";
 import "./liked.css";
 
 const encodedToken = token();

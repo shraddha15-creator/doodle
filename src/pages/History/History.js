@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
 import HistoryCard from "../../components/HistoryCard/HistoryCard";
 import { useAuth, useHistory } from "../../context";
-import { token } from "../../services/token";
+import { token } from "../../services";
 import "./history.css";
 
 const encodedToken = token();
