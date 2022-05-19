@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { usePlaylist } from "../../context";
 import "./sidebar.css";
 
 export const Sidebar = () => {

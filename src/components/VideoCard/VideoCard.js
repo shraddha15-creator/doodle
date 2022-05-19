@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth, useWatchLater, useHistory } from "../../context";
 import { addToWatchLater, addToHistory } from "../../services";
+import { PlaylistModal } from "../PlaylistModal/PlaylistModal";
 import "./videoCard.css";
 
 export const VideoCard = ({ video }) => {
@@ -10,6 +11,7 @@ export const VideoCard = ({ video }) => {
 	const { watchLaterDispatch } = useWatchLater();
 	const { historyDispatch } = useHistory();
 	const [showEllipsis, setShowEllipsis] = useState(false);
+	const [isModalOpen, setIsModalOpen] = useState(false);
 	return (
 		<>
 			<div className="single-video-card">
@@ -57,13 +59,25 @@ export const VideoCard = ({ video }) => {
 								<i className="fas fa-clock icon"></i>
 								Add to Watch Later
 							</div>
-							<div>
+							{/* <PlaylistModal /> */}
+							<div
+								onClick={() => {
+									setIsModalOpen(!isModalOpen);
+								}}
+							>
 								<i className="fas fa-photo-video icon"></i>
 								Add to Playlist
 							</div>
 						</div>
 					</div>
 				</div>
+				{isModalOpen && (
+					<PlaylistModal
+						modal={isModalOpen}
+						closeModal={setIsModalOpen}
+						video={video}
+					/>
+				)}
 				<h6 className="video-channel">{video.channel}</h6>
 				<div className="views-and-date">
 					<h6>{video.views}</h6>

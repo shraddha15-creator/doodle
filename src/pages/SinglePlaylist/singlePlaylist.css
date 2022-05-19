@@ -1,0 +1,23 @@
+.playlist-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  padding-bottom: 1rem;
+}
+
+.pl-title-n-delete {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.single-pl-page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.single-pl-videos {
+  display: flex;
+  gap: 1rem;
+}

@@ -3,3 +3,4 @@ export { useVideos, VideosProvider } from "./videos-context";
 export { useWatchLater, WatchLaterProvider } from "./watchlater-context";
 export { useHistory, HistoryProvider } from "./history-context";
 export { useLikes, LikesProvider } from "./likes-context";
+export { usePlaylist, PlaylistProvider } from "./playlist-context";

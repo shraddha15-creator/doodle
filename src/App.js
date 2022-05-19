@@ -12,6 +12,7 @@ import {
 	WatchLater,
 } from "./pages";
 import PrivateRoute from "./utils/PrivateRoute";
+import SinglePlaylist from "./pages/SinglePlaylist/SinglePlaylist";
 
 function App() {
 	return (
@@ -62,6 +63,14 @@ function App() {
 						element={
 							<PrivateRoute>
 								<Profile />
+							</PrivateRoute>
+						}
+					/>
+					<Route
+						path="/playlist/:playlistId"
+						element={
+							<PrivateRoute>
+								<SinglePlaylist />
 							</PrivateRoute>
 						}
 					/>
