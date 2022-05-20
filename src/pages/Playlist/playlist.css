@@ -1,0 +1,45 @@
+.playlist-container {
+  display: flex;
+  gap: 1rem;
+  height: 100%;
+}
+
+.playlist-page-card {
+  position: relative;
+  background: var(--gray-light);
+  padding: .5rem;
+  border-radius: 5px;
+}
+
+.playlist-thumbnail-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  min-height: 8.6rem;
+  color: var(--primary-light);
+  background-color: rgba(0, 0, 0, 0.659);
+  position: absolute;
+  right: .5rem;
+}
+
+.playlist-vid-count {
+  color: var(--primary-light);
+  font-size: 1rem;
+}
+
+.playlist-card-thumbnail {
+  width: 20vw;
+}
+
+.view-playlist-btn {
+  text-transform: uppercase;
+  color: var(--primary-dark);
+  font-weight: 600;
+  font-size: .9rem;
+}
+
+.view-playlist-btn:hover {
+  border-bottom: 1px solid var(--gray-dark);
+}
