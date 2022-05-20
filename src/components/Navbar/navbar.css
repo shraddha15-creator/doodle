@@ -31,6 +31,7 @@ nav {
 
 .search-input {
   padding: 0 0.5rem;
+  background: transparent;
 }
 
 .nav-right {

@@ -7,7 +7,7 @@
   color: var(--vl-primary-light);
   display: flex;
   flex-direction: column;
-  padding: 0 6rem;
+  padding: 0 5rem;
 }
 
 textarea,

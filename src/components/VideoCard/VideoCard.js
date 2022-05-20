@@ -87,7 +87,9 @@ export const VideoCard = ({ video }) => {
 							) : (
 								<div
 									onClick={() => {
-										setIsModalOpen(!isModalOpen);
+										user.token
+											? setIsModalOpen(!isModalOpen)
+											: navigate("/login");
 									}}
 								>
 									<i className="fas fa-photo-video icon"></i>

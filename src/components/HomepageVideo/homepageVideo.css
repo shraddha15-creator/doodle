@@ -6,7 +6,7 @@
   display: flex;
   height: 94vh;
   max-height: 60vh;
-  border-radius: 20% 2% 2% 20% / 50% 2% 2% 50%;
+  border-radius: 20% 0% 0% 20% / 50% 2% 2% 50%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
