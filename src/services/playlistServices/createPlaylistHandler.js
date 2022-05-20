@@ -4,6 +4,7 @@ import { token } from "../token";
 const encodedToken = token();
 
 export const createPlaylistHandler = async (
+	setPlaylistInput,
 	newCreatedPlaylist,
 	playlistDispatch
 ) => {
@@ -17,6 +18,7 @@ export const createPlaylistHandler = async (
 				},
 			}
 		);
+		setPlaylistInput("");
 		playlistDispatch({
 			type: "SET_PLAYLIST",
 			payload: response.data.playlists,

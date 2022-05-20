@@ -10,11 +10,13 @@ import "./playlist-modal.css";
 
 export const PlaylistModal = ({ closeModal, video }) => {
 	const { playlistState, playlistDispatch } = usePlaylist();
+	const [playlistInput, setPlaylistInput] = useState("");
 	const [newCreatedPlaylist, setNewCreatedPlaylist] = useState({
 		title: "",
 	});
 
 	const playlistInputhandler = (e) => {
+		setPlaylistInput(e.target.value);
 		setNewCreatedPlaylist({
 			...newCreatedPlaylist,
 			title: e.target.value,
@@ -66,20 +68,26 @@ export const PlaylistModal = ({ closeModal, video }) => {
 								type="text"
 								placeholder="Playlist One"
 								required
+								value={playlistInput}
 								onChange={playlistInputhandler}
 							/>
 						</label>
 					</div>
-					<div
-						className="create-new-playlist"
+					<button
+						disabled={!playlistInput}
+						className="create-new-playlist-btn"
 						onClick={(e) => {
 							e.preventDefault();
-							createPlaylistHandler(newCreatedPlaylist, playlistDispatch);
+							createPlaylistHandler(
+								setPlaylistInput,
+								newCreatedPlaylist,
+								playlistDispatch
+							);
 						}}
 					>
 						<span>Create new playlist</span>
 						<i className="fas fa-plus-circle add-close-icon"></i>
-					</div>
+					</button>
 				</div>
 			</div>
 		</>

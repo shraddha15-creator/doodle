@@ -51,11 +51,14 @@
   color: var(--primary-light);
 }
 
-.create-new-playlist {
+.create-new-playlist-btn {
   display: flex;
   gap: .2rem;
   align-items: baseline;
   justify-content: center;
+  width: 100%;
+  background-color: transparent;
+  color: var(--primary-light);
   border: 1px solid var(--primary-light);
   border-radius: 2px;
   margin-top: .3rem;
