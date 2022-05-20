@@ -1,20 +1,43 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth, useLikes, usePlaylist, useWatchLater } from "../../context";
 import "./profile.css";
 
 export const Profile = () => {
-	const { user } = useAuth();
+	const navigate = useNavigate();
+
+	const { user, setUser } = useAuth();
 	console.log(user);
 	const { likesState } = useLikes();
 	const { watchLaterState } = useWatchLater();
 	const { playlistState } = usePlaylist();
 	console.log(playlistState);
+
+	const logoutHandler = () => {
+		localStorage.removeItem("token");
+		localStorage.removeItem("userDetails");
+		setUser({ token: "", userDetails: "", isLoggedIn: false });
+		navigate("/");
+	};
+
 	return (
 		<>
 			<div className="profile-container">
 				<div className="profile-logout-btn">
 					<h2>My Profile</h2>
-					<button className="logout-btn">Logout</button>
+					{user && user.isLoggedIn ? (
+						<button onClick={logoutHandler} className="logout-btn">
+							<i className="fas fa-sign-in-alt icon"></i>
+							Logout
+						</button>
+					) : (
+						<Link to="/login" className="elp-items">
+							<div>
+								<i className="fas fa-sign-in-alt icon"></i>
+								Login
+							</div>
+						</Link>
+					)}
 				</div>
 				<div className="profile-user-details">
 					<span className="profile-user-name">
