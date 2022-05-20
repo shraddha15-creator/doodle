@@ -23,7 +23,6 @@ export const VideoCard = ({ video }) => {
 		playlistState.map((playlist) => {
 			playlist.videos?.some((list) => list.id === video.id);
 		});
-	console.log("is in playlist video", isInPlaylist);
 
 	return (
 		<>

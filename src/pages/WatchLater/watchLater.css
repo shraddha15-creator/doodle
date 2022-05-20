@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.watch-later-video {
+.watch-later-card {
   display: flex;
   justify-content: space-between;
   padding: .7rem;
@@ -14,13 +14,12 @@
 .video-and-details {
   display: flex;
   gap: 1rem;
-  height: 15vh;
-
 }
+
 
 .watch-later-title {
   font-weight: 600;
-  /* font-size: .8em; */
+  color: var(--primary-dark);
 }
 
 .watch-later-channel {

@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { LikedVideoCard } from "../../components";
+import { VideoCard } from "../../components";
 import { useAuth, useLikes } from "../../context";
 import { token } from "../../services";
 import "./liked.css";
@@ -39,7 +39,7 @@ export const Liked = () => {
 				) : (
 					likedVideos &&
 					likedVideos.map((video) => {
-						return <LikedVideoCard key={video.id} video={video} />;
+						return <VideoCard key={video.id} video={video} />;
 					})
 				)}
 			</div>
