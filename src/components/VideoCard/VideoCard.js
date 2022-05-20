@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useAuth, useWatchLater, useHistory } from "../../context";
+import { useAuth, useWatchLater, useHistory, usePlaylist } from "../../context";
 import { addToWatchLater, addToHistory } from "../../services";
+import { removeFromPlaylist } from "../../services/playlistServices";
 import { PlaylistModal } from "../PlaylistModal/PlaylistModal";
 import "./videoCard.css";
 
@@ -12,6 +13,18 @@ export const VideoCard = ({ video }) => {
 	const { historyDispatch } = useHistory();
 	const [showEllipsis, setShowEllipsis] = useState(false);
 	const [isModalOpen, setIsModalOpen] = useState(false);
+	const { playlistState, playlistDispatch } = usePlaylist();
+
+	const playlist =
+		playlistState.length > 0 && playlistState.map((playlist) => playlist._id);
+
+	const isInPlaylist =
+		playlistState.length > 0 &&
+		playlistState.map((playlist) => {
+			playlist.videos?.some((list) => list.id === video.id);
+		});
+	console.log("is in playlist video", isInPlaylist);
+
 	return (
 		<>
 			<div className="single-video-card">
@@ -59,15 +72,29 @@ export const VideoCard = ({ video }) => {
 								<i className="fas fa-clock icon"></i>
 								Add to Watch Later
 							</div>
-							{/* <PlaylistModal /> */}
-							<div
-								onClick={() => {
-									setIsModalOpen(!isModalOpen);
-								}}
-							>
-								<i className="fas fa-photo-video icon"></i>
-								Add to Playlist
-							</div>
+							{isInPlaylist ? (
+								<div
+									onClick={() => {
+										removeFromPlaylist(
+											playlist._id,
+											video.id,
+											playlistDispatch
+										);
+									}}
+								>
+									<i className="fas fa-photo-video icon"></i>
+									Remove from Playlist
+								</div>
+							) : (
+								<div
+									onClick={() => {
+										setIsModalOpen(!isModalOpen);
+									}}
+								>
+									<i className="fas fa-photo-video icon"></i>
+									Add to Playlist
+								</div>
+							)}
 						</div>
 					</div>
 				</div>
