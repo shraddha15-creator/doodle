@@ -8,7 +8,7 @@ export const VideoListing = () => {
 	return (
 		<div className="video-page">
 			<HomepageVideo />
-			<CategoriesChips />
+			<CategoriesChips videos={videos} />
 			<div className="videos-container">
 				{videos &&
 					videos.map((video) => <VideoCard key={video.id} video={video} />)}

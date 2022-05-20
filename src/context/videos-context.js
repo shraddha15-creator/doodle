@@ -26,21 +26,21 @@ export const VideosProvider = ({ children }) => {
 	};
 
 	// Category filter
-	const activeCategoryHandler = (category) => {
-		setIsActive(true);
-		const filteredCategory = videos.filter((vdo) => {
+	const activeCategoryHandler = (category, videos) => {
+		// setIsActive(true);
+		const filteredCategory = [...videos].filter((vdo) => {
 			return category.categoryName === vdo.category;
 		});
 		setVideos(filteredCategory);
 
 		setIsActive(() =>
-			categories.find((chip) => {
+			categories.filter((chip) => {
 				return chip.categoryName === category.categoryName
 					? chip.categoryName
 					: category.categoryName;
 			})
 		);
-		// setIsActive(!isActive === true);
+		setIsActive(!isActive === true);
 	};
 
 	useEffect(() => {
