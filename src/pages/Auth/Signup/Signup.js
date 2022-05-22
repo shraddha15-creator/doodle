@@ -63,6 +63,7 @@ export const Signup = () => {
 									id="firstname"
 									placeholder="First Name"
 									name="firstname"
+									required
 									value={userSignupData.firstName}
 									onChange={(e) =>
 										setUserSignupData((prev) => ({
@@ -79,6 +80,7 @@ export const Signup = () => {
 									id="lastname"
 									placeholder="Last Name"
 									name="lastname"
+									required
 									value={userSignupData.lastName}
 									onChange={(e) =>
 										setUserSignupData((prev) => ({
@@ -95,6 +97,7 @@ export const Signup = () => {
 									id="email"
 									placeholder="test@gmail.com"
 									name="email"
+									required
 									value={userSignupData.email}
 									onChange={(e) =>
 										setUserSignupData((prev) => ({
@@ -111,6 +114,7 @@ export const Signup = () => {
 									id="password"
 									placeholder="********"
 									name="password"
+									required
 									value={userSignupData.password}
 									onChange={(e) =>
 										setUserSignupData((prev) => ({
@@ -127,6 +131,7 @@ export const Signup = () => {
 									id="confirmPassword"
 									placeholder="********"
 									name="confirmPassword"
+									required
 									value={userSignupData.confirmPassword}
 									onChange={(e) =>
 										setUserSignupData((prev) => ({
