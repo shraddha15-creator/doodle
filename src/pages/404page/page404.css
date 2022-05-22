@@ -1,0 +1,9 @@
+.error-page-conatiner {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.error-img {
+  width: 60%;
+}

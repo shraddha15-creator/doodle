@@ -13,6 +13,7 @@ import {
 } from "./pages";
 import PrivateRoute from "./utils/PrivateRoute";
 import SinglePlaylist from "./pages/SinglePlaylist/SinglePlaylist";
+import Page404 from "./pages/404page/Page404";
 
 function App() {
 	return (
@@ -21,6 +22,7 @@ function App() {
 			<div className="main-container">
 				<Sidebar />
 				<Routes>
+					<Route path="*" element={<Page404 />} />
 					<Route path="/" element={<VideoListing />} />
 					<Route path="/watch/:videoId" element={<SingleVideo />} />
 					<Route path="/login" element={<Login />} />
