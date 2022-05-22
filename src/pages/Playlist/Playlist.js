@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import GoToHomeBtn from "../../components/GoToHomeBtn/GoToHomeBtn";
 import { token } from "../../services";
 import "./playlist.css";
 
@@ -29,7 +30,13 @@ export const Playlist = () => {
 	return (
 		<>
 			<div className="playlist-container">
-				{playlistData &&
+				{playlistData && playlistData.length === 0 ? (
+					<div className="no-data">
+						<p>No Playlist available</p>
+						<GoToHomeBtn />
+					</div>
+				) : (
+					playlistData &&
 					playlistData?.map((playlist) => {
 						return (
 							<div key={playlist._id} className="playlist-page-card">
@@ -53,7 +60,8 @@ export const Playlist = () => {
 								</Link>
 							</div>
 						);
-					})}
+					})
+				)}
 			</div>
 		</>
 	);

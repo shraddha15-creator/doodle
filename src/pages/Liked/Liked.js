@@ -1,7 +1,8 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
-import { Navigate, useLocation } from "react-router-dom";
+import { Link, Navigate, useLocation } from "react-router-dom";
 import { VideoCard } from "../../components";
+import GoToHomeBtn from "../../components/GoToHomeBtn/GoToHomeBtn";
 import { useAuth, useLikes } from "../../context";
 import { token } from "../../services";
 import "./liked.css";
@@ -32,10 +33,12 @@ export const Liked = () => {
 
 	return user.token ? (
 		<div className="liked-container">
-			<h4>Liked videos</h4>
 			<div className="liked-videos">
 				{likesState.likes && likesState.likes.length === 0 ? (
-					<h4 className="no-history">You havn't liked any video yet!</h4>
+					<div className="no-data">
+						<p>No Playlist available</p>
+						<GoToHomeBtn />
+					</div>
 				) : (
 					likedVideos &&
 					likedVideos.map((video) => {

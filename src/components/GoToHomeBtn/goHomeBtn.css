@@ -1,0 +1,10 @@
+.go-home-container {
+  background-color: var(--secondary);
+  border-radius: 5px;
+  padding: .5rem 2rem;
+  border: none;
+}
+
+.go-home-btn {
+  color: var(--primary-light);
+}

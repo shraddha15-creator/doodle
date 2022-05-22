@@ -14,7 +14,6 @@ export const addToHistory = async (video, historyDispatch) => {
 			type: "ADD_TO_HISTORY",
 			payload: response.data,
 		});
-		console.log(response);
 	} catch (error) {
 		console.error("Error while adding to history", error);
 	}
