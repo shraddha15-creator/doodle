@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
+
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import "./navbar.css";
@@ -12,6 +14,7 @@ export const Navbar = () => {
 		localStorage.removeItem("token");
 		localStorage.removeItem("userDetails");
 		setUser({ token: "", userDetails: "", isLoggedIn: false });
+		toast.success("Logged Out Successfully!");
 		navigate("/");
 	};
 

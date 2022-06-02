@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { useAuth } from "../../../context/auth-context";
 import "../auth.css";
 
@@ -34,7 +35,9 @@ export const Login = () => {
 				isLoggedIn: true,
 			});
 			navigate(from, { replace: true });
+			toast.success("Logged In Successfully!");
 		} catch (error) {
+			toast.error("User does not exist");
 			console.error("Error while Login", error);
 		}
 	};

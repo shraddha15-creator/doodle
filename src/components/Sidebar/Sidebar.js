@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { usePlaylist } from "../../context";
+import { Toast } from "../Toast";
 import "./sidebar.css";
 
 export const Sidebar = () => {
@@ -61,6 +61,7 @@ export const Sidebar = () => {
 					<span>History</span>
 				</div>
 			</NavLink>
+			<Toast />
 		</div>
 	);
 };

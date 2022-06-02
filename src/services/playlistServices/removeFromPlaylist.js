@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 import { token } from "../token";
 
 const encodedToken = token();
@@ -21,7 +22,9 @@ export const removeFromPlaylist = async (
 			type: "SET_SINGLE_PLAYLIST",
 			payload: response.data.playlist,
 		});
+		toast.success("Removed");
 	} catch (error) {
+		toast.error("Error");
 		console.error("ERROR WHILE REMOVING FROM PLAYLIST", error);
 	}
 };

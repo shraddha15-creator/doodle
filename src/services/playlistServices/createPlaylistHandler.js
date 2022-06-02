@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 import { token } from "../token";
 
 const encodedToken = token();
@@ -23,6 +24,7 @@ export const createPlaylistHandler = async (
 			type: "SET_PLAYLIST",
 			payload: response.data.playlists,
 		});
+		toast.success("Playlist Created!");
 	} catch (error) {
 		console.error(error);
 	}
