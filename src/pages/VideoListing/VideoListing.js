@@ -1,6 +1,6 @@
 import React from "react";
-import { HomepageVideo, CategoriesChips, VideoCard } from "../../components";
 import { useVideos } from "../../context/videos-context";
+import { HomepageVideo, CategoriesChips, VideoCard } from "../../components";
 import "./videoListing.css";
 
 export const VideoListing = () => {
