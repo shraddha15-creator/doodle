@@ -92,9 +92,7 @@ export const Login = () => {
 						</button>
 						<button
 							className="auth-btn btn-filled"
-							onClick={(e) =>
-								loginHandler(e, "adarshbalika@gmail.com", "adarshBalika123")
-							}
+							onClick={(e) => loginHandler(e, "jack@gmail.com", "jack123")}
 						>
 							Login with Test Account
 						</button>
