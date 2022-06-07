@@ -4,14 +4,15 @@ import axios from "axios";
 const VideosContext = createContext();
 
 export const VideosProvider = ({ children }) => {
-	const [categories, setCategories] = useState();
+	const [categories, setCategories] = useState([]);
 	const [videos, setVideos] = useState([]);
 	const [isActive, setIsActive] = useState(false);
+	const [filteredVideos, setFilteredVideos] = useState([]);
 
 	// Fetch categories function
 	const getCategories = () => {
 		axios
-			.get("./api/categories")
+			.get("/api/categories")
 			.then((res) => setCategories(res.data.categories));
 	};
 
@@ -20,27 +21,18 @@ export const VideosProvider = ({ children }) => {
 		try {
 			const response = await axios.get("/api/videos");
 			setVideos(response.data.videos);
+			setFilteredVideos(response.data.videos);
 		} catch (error) {
 			console.error("ERROR: while fetching videos", error);
 		}
 	};
 
 	// Category filter
-	const activeCategoryHandler = (category, videos) => {
-		// setIsActive(true);
-		const filteredCategory = [...videos].filter((vdo) => {
+	const activeCategoryHandler = (category, myvideos) => {
+		const filteredCategory = myvideos.filter((vdo) => {
 			return category.categoryName === vdo.category;
 		});
-		setVideos(filteredCategory);
-
-		setIsActive(() =>
-			categories.filter((chip) => {
-				return chip.categoryName === category.categoryName
-					? chip.categoryName
-					: category.categoryName;
-			})
-		);
-		setIsActive(!isActive === true);
+		setFilteredVideos(filteredCategory);
 	};
 
 	useEffect(() => {
@@ -59,6 +51,8 @@ export const VideosProvider = ({ children }) => {
 				activeCategoryHandler,
 				isActive,
 				setIsActive,
+				filteredVideos,
+				getVideos,
 			}}
 		>
 			{children}
