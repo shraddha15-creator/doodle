@@ -6,7 +6,6 @@ const VideosContext = createContext();
 export const VideosProvider = ({ children }) => {
 	const [categories, setCategories] = useState([]);
 	const [videos, setVideos] = useState([]);
-	const [isActive, setIsActive] = useState(false);
 	const [filteredVideos, setFilteredVideos] = useState([]);
 
 	// Fetch categories function
@@ -43,16 +42,30 @@ export const VideosProvider = ({ children }) => {
 		getVideos();
 	}, []);
 
+	// ==== search function
+	const searchHandler = (searchInput, setSearchInput, e) => {
+		setSearchInput(e.target.value);
+		const searchedData = videos.filter((val) => {
+			if (searchInput == "") {
+				return val;
+			} else if (val.title.toLowerCase().includes(searchInput.toLowerCase())) {
+				return val;
+			}
+		});
+		setFilteredVideos(searchedData);
+	};
+
 	return (
 		<VideosContext.Provider
 			value={{
 				categories,
 				videos,
+				setVideos,
 				activeCategoryHandler,
-				isActive,
-				setIsActive,
 				filteredVideos,
+				setFilteredVideos,
 				getVideos,
+				searchHandler,
 			}}
 		>
 			{children}

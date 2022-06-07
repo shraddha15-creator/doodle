@@ -4,11 +4,14 @@ import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/auth-context";
 import "./navbar.css";
+import { useVideos } from "../../context";
 
 export const Navbar = () => {
 	const navigate = useNavigate();
+	const { searchHandler } = useVideos();
 	const { user, setUser } = useAuth();
 	const [userOptions, setUserOptions] = useState(false);
+	const [searchInput, setSearchInput] = useState("");
 
 	const logoutHandler = () => {
 		localStorage.removeItem("token");
@@ -26,7 +29,12 @@ export const Navbar = () => {
 			<div className="nav-middle">
 				<label>
 					<i className="fas fa-search"></i>
-					<input className="search-input" placeholder="Search video"></input>
+					<input
+						className="search-input"
+						placeholder="Search video"
+						value={searchInput}
+						onChange={(e) => searchHandler(searchInput, setSearchInput, e)}
+					></input>
 				</label>
 			</div>
 			<div className="nav-right">
