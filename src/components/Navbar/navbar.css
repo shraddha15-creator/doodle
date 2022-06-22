@@ -42,9 +42,9 @@ nav {
 
 .nav-right-items {
   display: flex;
-  gap: 1rem;
+  gap: .1rem;
   font-size: .9rem;
-  align-items: baseline;
+  text-align: center;
   text-decoration: none;
   color: var(--primary-dark);
 }
@@ -57,4 +57,9 @@ nav {
 .greetUser {
   color: var(--primary-dark);
   font-weight: 500;
+  text-decoration: underline;
+}
+
+.icon-user{
+  font-size: 1.1rem;
 }
