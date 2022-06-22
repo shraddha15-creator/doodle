@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import ReactPlayer from "react-player/youtube";
-import { useParams } from "react-router-dom";
-import { useLikes, useVideos } from "../../context";
+import { useNavigate, useParams } from "react-router-dom";
+import { useAuth, useLikes, useVideos } from "../../context";
 import { addToLikes, removeFromLikes } from "../../services";
 import "./singleVid.css";
 
 export const SingleVideo = () => {
 	const { videoId } = useParams();
+	const navigate = useNavigate();
+	const { user } = useAuth();
 	const { videos } = useVideos();
 	const getSingleVideo = (videos, videoId) => {
 		return videos.find((video) => video.id === videoId);
@@ -51,7 +53,9 @@ export const SingleVideo = () => {
 								<i
 									className="far fa-thumbs-up "
 									onClick={() =>
-										addToLikes(video, isLiked, setIsLiked, likesDispatch)
+										user.token
+											? addToLikes(video, isLiked, setIsLiked, likesDispatch)
+											: navigate("/login")
 									}
 								></i>
 							)}
