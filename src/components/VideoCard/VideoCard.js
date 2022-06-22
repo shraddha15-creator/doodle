@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useAuth, useWatchLater, useHistory } from "../../context";
 import { addToWatchLater, addToHistory } from "../../services";
 import { PlaylistModal } from "../PlaylistModal/PlaylistModal";
 import "./videoCard.css";
 
-export const VideoCard = ({ video }) => {
-	const { user } = useAuth();
+export const VideoCard = ({ video, currentPath }) => {
 	const navigate = useNavigate();
+	const location = useLocation();
+	const { user } = useAuth();
 	const { watchLaterDispatch } = useWatchLater();
 	const { historyDispatch } = useHistory();
 	const [showEllipsis, setShowEllipsis] = useState(false);
@@ -68,7 +69,9 @@ export const VideoCard = ({ video }) => {
 								}}
 							>
 								<i className="fas fa-photo-video icon"></i>
-								Add to Playlist
+								{currentPath == location.pathname
+									? "Remove from Playlist"
+									: "Add to Playlist"}
 							</div>
 						</div>
 					</div>

@@ -1,6 +1,11 @@
 import axios from "axios";
 import React from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {
+	useLocation,
+	useNavigate,
+	useParams,
+	matchRoutes,
+} from "react-router-dom";
 import { VideoCard } from "../../components";
 import { usePlaylist } from "../../context";
 import { token } from "../../services";
@@ -11,6 +16,16 @@ const encodedToken = token();
 const SinglePlaylist = () => {
 	const { playlistId } = useParams();
 	const navigate = useNavigate();
+	const location = useLocation();
+	const routes = [{ path: `/playlist/${playlistId}` }];
+
+	const useCurrentPath = () => {
+		const [{ route }] = matchRoutes(routes, location);
+		return route.path;
+	};
+
+	const currentPath = useCurrentPath();
+
 	const { playlistState, playlistDispatch } = usePlaylist();
 
 	const getSinglePlaylist = (playlistState, playlistId) =>
@@ -47,7 +62,9 @@ const SinglePlaylist = () => {
 			<div className="single-pl-videos">
 				{singlePlaylist?.videos?.length > 0 &&
 					singlePlaylist?.videos?.map((video, index) => {
-						return <VideoCard key={index} video={video} />;
+						return (
+							<VideoCard key={index} video={video} currentPath={currentPath} />
+						);
 					})}
 			</div>
 		</div>
