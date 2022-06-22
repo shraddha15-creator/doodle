@@ -36,6 +36,7 @@ export const Login = () => {
 			});
 			navigate(from, { replace: true });
 			toast.success("Logged In Successfully!");
+			window.location.reload();
 		} catch (error) {
 			toast.error("User does not exist");
 			console.error("Error while Login", error);
