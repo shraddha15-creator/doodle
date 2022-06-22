@@ -5,6 +5,7 @@ const VideosContext = createContext();
 
 export const VideosProvider = ({ children }) => {
 	const [categories, setCategories] = useState([]);
+	const [activeCategory, setActiveCategory] = useState("All");
 	const [videos, setVideos] = useState([]);
 	const [filteredVideos, setFilteredVideos] = useState([]);
 
@@ -21,6 +22,7 @@ export const VideosProvider = ({ children }) => {
 			const response = await axios.get("/api/videos");
 			setVideos(response.data.videos);
 			setFilteredVideos(response.data.videos);
+			setActiveCategory("All");
 		} catch (error) {
 			console.error("ERROR: while fetching videos", error);
 		}
@@ -32,6 +34,7 @@ export const VideosProvider = ({ children }) => {
 			return category.categoryName === vdo.category;
 		});
 		setFilteredVideos(filteredCategory);
+		setActiveCategory(filteredCategory[0].category);
 	};
 
 	useEffect(() => {
@@ -66,6 +69,7 @@ export const VideosProvider = ({ children }) => {
 				setFilteredVideos,
 				getVideos,
 				searchHandler,
+				activeCategory,
 			}}
 		>
 			{children}

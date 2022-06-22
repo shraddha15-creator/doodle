@@ -13,7 +13,7 @@
 }
 
 .categories-items:hover {
-  background-color: var(--gray-light);
+  background-color: var(--secondary-light);
 }
 
 .active-category {
