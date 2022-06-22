@@ -7,11 +7,9 @@ export const Profile = () => {
 	const navigate = useNavigate();
 
 	const { user, setUser } = useAuth();
-	console.log(user);
 	const { likesState } = useLikes();
 	const { watchLaterState } = useWatchLater();
 	const { playlistState } = usePlaylist();
-	console.log(playlistState);
 
 	const logoutHandler = () => {
 		localStorage.removeItem("token");
