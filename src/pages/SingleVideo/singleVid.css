@@ -84,3 +84,19 @@
   top: 0;
   left: 0;
 }
+
+@media (max-width: 700px){
+  .single-vid-card {
+  width: 100%;
+}
+
+.single-video-title {
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.video-disc {
+  padding-top: 1rem;
+  font-size: .6rem;
+}
+}

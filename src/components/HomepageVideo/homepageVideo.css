@@ -35,6 +35,7 @@
   overflow: hidden;
   height: 90vh;
   color: white;
+  z-index: 1;
 }
 
 .w-background-video>video {
@@ -81,4 +82,27 @@ video {
 
 .explore-btn:hover {
   background-color: rgba(95, 95, 95, 0.455);
+}
+
+@media (max-width: 1400px) {
+  .text-on-video{
+  font-size: 1rem;
+  word-wrap: wrap;
+  }
+}
+
+@media (max-width: 900px){
+    .w-background-video {
+  height: 45vh;
+}
+}
+
+@media (max-width: 665px){
+  .text-on-video{
+  font-size: .7rem;
+  }
+
+  .w-background-video {
+  height: 30vh;
+}
 }

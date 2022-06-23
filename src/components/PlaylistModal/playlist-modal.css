@@ -8,6 +8,7 @@
   position: fixed;
   top: 12rem;
   right: 26rem;
+  z-index: 2;
 }
 
 .modal-close {
@@ -66,3 +67,18 @@
   font-weight: 400;
   font-size: .7rem;
 }
+
+@media (min-width: 700px){
+  .playlist-modal-container {
+  top: 50%;
+  right: 30%;
+}
+}
+
+@media (max-width: 700px){
+  .playlist-modal-container {
+  top: 50%;
+  right: 30%;
+}
+}
+

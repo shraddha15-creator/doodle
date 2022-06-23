@@ -31,3 +31,39 @@
 .ellipsis-items {
   left: -5rem;
 }
+
+@media (max-width: 660px) {
+  .watch-later-title {
+  font-weight: 500;
+  font-size: .9rem;
+}
+
+.watch-later-channel {
+  font-weight: 400;
+  font-size: .7em;
+}
+}
+@media (max-width: 550px){
+  .watch-later-title {
+  font-size: .7rem;
+  }
+  .watch-later-channel {
+    font-size: .6em;
+  }
+}
+
+@media (max-width: 450px){
+  .watch-later-title {
+  font-size: .5rem;
+  }
+  .watch-later-channel {
+    font-size: .4em;
+  }
+  .wL-thumbnail{
+    width: 60%;
+  }
+
+  .ellipsis-items {
+    left: -11rem;
+}
+}

@@ -25,7 +25,11 @@ export const WatchLaterCard = ({ video }) => {
 					}
 				>
 					<div className="video-and-details">
-						<img src={video.thumbnail} alt="wL-video" />
+						<img
+							src={video.thumbnail}
+							alt="wL-video"
+							className="wL-thumbnail"
+						/>
 						<div>
 							<p className="watch-later-title">{video.title}</p>
 							<p className="watch-later-channel">{video.channel}</p>

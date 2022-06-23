@@ -11,3 +11,10 @@
   gap: 1rem;
   margin-bottom: 3rem;
 }
+
+@media (max-width: 665px){
+  .videos-container {
+  justify-content: center;
+
+  }
+}

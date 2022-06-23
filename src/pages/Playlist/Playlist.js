@@ -40,23 +40,23 @@ export const Playlist = () => {
 					playlistData?.map((playlist) => {
 						return (
 							<div key={playlist._id} className="playlist-page-card">
-								<div className="playlist-thumbnail-wrapper ">
-									<span className="playlist-vid-count">
-										{playlist.videos.length}
-									</span>
-									<i className="fas fa-photo-video playlist-vid-count"></i>
-								</div>
 								<img
 									src={playlist.videos[0].thumbnail}
 									alt={playlist.videos[0].thumbnail}
 									className="playlist-card-thumbnail"
 								/>
-								<div>{playlist.title}</div>
+								<div>
+									#{playlist.title}
+									<span className="playlist-vid-count">
+										{" "}
+										({playlist.videos.length})
+									</span>
+								</div>
 								<Link
 									to={`/playlist/${playlist._id}`}
 									className="view-playlist-btn"
 								>
-									View full playlist
+									View full playlist <i class="fas fa-external-link-alt"></i>
 								</Link>
 							</div>
 						);

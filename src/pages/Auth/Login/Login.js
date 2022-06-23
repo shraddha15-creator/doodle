@@ -98,11 +98,12 @@ export const Login = () => {
 							className="auth-btn btn-filled"
 							onClick={(e) => loginHandler(e, "jack@gmail.com", "jack123")}
 						>
-							Login with Test Account
+							Guest Login
 						</button>
 						<div>
 							Don't have an account?
 							<Link to="/signup" className="link-signup">
+								{" "}
 								Signup
 							</Link>
 						</div>

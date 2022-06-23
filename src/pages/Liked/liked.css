@@ -42,3 +42,9 @@
   gap: .5rem;
   padding-top: .5rem;
 }
+
+@media (max-width: 670px) {
+.liked-videos {
+  justify-content: center;
+}
+}

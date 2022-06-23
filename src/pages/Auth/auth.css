@@ -60,5 +60,5 @@
 
 .link-signup {
   color: var(--secondary);
-
+  text-decoration: underline;
 }

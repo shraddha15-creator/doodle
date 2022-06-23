@@ -20,7 +20,6 @@
   display: flex;
   gap: 1rem;
   height: 15vh;
-
 }
 
 .history-title {
@@ -47,4 +46,68 @@
   border: 2px solid var(--secondary);
   padding: .5rem .8rem;
   border-radius: 5px;
+}
+
+@media (max-width: 980px){
+    .history-title {
+    font-weight: 600;
+    font-size: .7rem;
+    background-color:burlywood
+  }
+}
+
+@media (max-width: 750px){
+  .history-title {
+  font-weight: 500;
+  font-size: .6rem;
+  background-color:brown
+}
+
+.history-channel {
+    font-weight: 500;
+    font-size: .5rem;
+  }
+
+  .history-description {
+  font-size: .5rem;
+  font-weight: 400;
+}
+}
+
+@media (max-width: 470px){
+  .history-title {
+  font-size: .5rem;
+}
+
+.history-channel {
+    font-size: .4rem;
+  }
+
+  .history-description {
+    font-size: .4rem;
+  }
+}
+
+@media (max-width: 420px){
+  .history-title {
+  font-size: .4rem;
+}
+
+.history-description {
+    font-size: .3rem;
+  }
+
+  .history-video {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+
+.video-and-details {
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
 }

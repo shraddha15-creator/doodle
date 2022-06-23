@@ -22,7 +22,7 @@ export const Profile = () => {
 		<>
 			<div className="profile-container">
 				<div className="profile-logout-btn">
-					<h2>My Profile</h2>
+					<p className="my-prof">My Profile</p>
 					{user && user.isLoggedIn ? (
 						<button onClick={logoutHandler} className="logout-btn">
 							<i className="fas fa-sign-in-alt icon"></i>

@@ -5,7 +5,7 @@ import "./sidebar.css";
 
 export const Sidebar = () => {
 	return (
-		<div className="sidebar-container">
+		<div className="sidebar-container sidebar-hidden">
 			<NavLink
 				to="/"
 				className={({ isActive }) =>

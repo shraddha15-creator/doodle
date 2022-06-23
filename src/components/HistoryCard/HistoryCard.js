@@ -19,7 +19,7 @@ const HistoryCard = ({ video }) => {
 						<p className="history-title">{video.title}</p>
 						<p className="history-channel">{video.channel}</p>
 						<p className="history-description">
-							{video.description.slice(0, 200)} ...
+							{video.description.slice(0, 100)} ...
 						</p>
 					</div>
 				</div>
@@ -43,10 +43,7 @@ const HistoryCard = ({ video }) => {
 							<i className="fas fa-clock icon"></i>
 							Add to Watch Later
 						</div>
-						<div>
-							<i className="fas fa-photo-video icon"></i>
-							Add to Playlist
-						</div>
+
 						<div onClick={() => deleteFromHistory(video.id, historyDispatch)}>
 							<i className="fas fa-times icon"></i>
 							Remove from History

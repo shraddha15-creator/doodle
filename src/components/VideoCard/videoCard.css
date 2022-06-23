@@ -78,3 +78,38 @@
   color: var(--primary-light);
   margin-right: 5px;
 }
+
+@media (max-width: 1120px){
+  .single-video-card {
+  width: 42%;
+  }
+}
+
+@media (max-width: 665px){
+  .single-video-card {
+    width: 65%;
+  }
+}
+
+@media (max-width: 400px){
+  .vid-title {
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.video-channel {
+  font-size: 0.5rem;
+}
+
+.views-and-date{
+  font-size: 0.7rem;
+}
+
+.ellipsis {
+  font-size: .7rem;
+}
+
+.ellipsis-items {
+  left: 3rem;
+}
+}

@@ -35,3 +35,9 @@ i {
   width: 100%;
   height: 70vh;
 }
+
+@media (max-width: 1400px) {
+  .App{
+    padding: 0 1rem;
+  }
+}

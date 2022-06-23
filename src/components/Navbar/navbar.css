@@ -63,3 +63,17 @@ nav {
 .icon-user{
   font-size: 1.1rem;
 }
+
+@media (max-width: 665px){
+  .brand-name {
+  font-size: 1rem;
+  font-weight: 500;
+}
+.nav-right-items{
+  font-size: .7rem;
+}
+
+.icon-user{
+  font-size: .8rem;
+}
+}

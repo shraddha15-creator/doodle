@@ -19,3 +19,16 @@
 .active-category {
   background-color: var(--secondary);
 }
+
+@media (max-width: 790px) {
+  .categories-chips{
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .2rem;
+  }
+
+  .categories-items {
+  padding: .1rem .5rem;
+  font-size: .6rem;
+  }
+}

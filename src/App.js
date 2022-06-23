@@ -14,6 +14,7 @@ import {
 import PrivateRoute from "./utils/PrivateRoute";
 import SinglePlaylist from "./pages/SinglePlaylist/SinglePlaylist";
 import Page404 from "./pages/404page/Page404";
+import Footer from "./components/Footer/Footer";
 
 function App() {
 	return (
@@ -78,8 +79,7 @@ function App() {
 					/>
 				</Routes>
 			</div>
-
-			{/* <Footer /> */}
+			<Footer />
 		</div>
 	);
 }

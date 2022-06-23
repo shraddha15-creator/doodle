@@ -73,8 +73,8 @@ export const SingleVideo = () => {
 							alt={`img-${video.channel}`}
 						/>
 						<div>
-							<p>{video.channel}</p>
-							<p>{video.subscription} Subscribers</p>
+							<h4>{video.channel}</h4>
+							<h5>{video.subscription} Subscribers</h5>
 						</div>
 					</div>
 					<p className="video-disc">{video.description}</p>
