@@ -39,19 +39,11 @@ export const SingleVideo = () => {
 							{isLiked ? (
 								<i
 									className="fas fa-thumbs-up liked-icon"
-									onClick={() =>
-										removeFromLikes(
-											video,
-											likesState,
-											isLiked,
-											setIsLiked,
-											likesDispatch
-										)
-									}
+									onClick={() => removeFromLikes(video, likesDispatch)}
 								></i>
 							) : (
 								<i
-									className="far fa-thumbs-up "
+									className="far fa-thumbs-up like-icon"
 									onClick={() =>
 										user.token
 											? addToLikes(video, isLiked, setIsLiked, likesDispatch)
@@ -59,9 +51,6 @@ export const SingleVideo = () => {
 									}
 								></i>
 							)}
-
-							{/* <i className="far fa-thumbs-down"></i> */}
-							<i className="far fa-bookmark"></i>
 						</div>
 					</div>
 				</div>

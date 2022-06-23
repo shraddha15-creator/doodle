@@ -43,6 +43,7 @@
 }
 
 .clear-button {
+  cursor: pointer;
   border: 2px solid var(--secondary);
   padding: .5rem .8rem;
   border-radius: 5px;

@@ -62,12 +62,6 @@ export const Navbar = () => {
 									Profile
 								</div>
 							</Link>
-							<Link to="/profile" className="elp-items">
-								<div>
-									<i className="fas fa-cog icon"></i>
-									Settings
-								</div>
-							</Link>
 							{user && user.isLoggedIn ? (
 								<div onClick={logoutHandler}>
 									<i className="fas fa-sign-in-alt icon"></i>

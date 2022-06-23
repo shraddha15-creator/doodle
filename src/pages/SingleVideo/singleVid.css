@@ -7,7 +7,12 @@
 }
 
 .liked-icon {
-  color: red
+  color: red;
+  cursor: pointer;
+}
+
+.like-icon {
+  cursor: pointer;
 }
 
 .video-frame {
