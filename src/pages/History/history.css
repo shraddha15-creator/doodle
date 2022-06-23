@@ -52,7 +52,6 @@
     .history-title {
     font-weight: 600;
     font-size: .7rem;
-    background-color:burlywood
   }
 }
 
@@ -60,7 +59,6 @@
   .history-title {
   font-weight: 500;
   font-size: .6rem;
-  background-color:brown
 }
 
 .history-channel {
@@ -104,10 +102,9 @@
 }
 
 
-.video-and-details {
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
-}
-
+  .video-and-details {
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+  }
 }
