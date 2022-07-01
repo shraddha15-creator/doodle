@@ -13,27 +13,27 @@ import { requiresAuth } from "../utils/authUtils";
  * */
 
 export const getWatchLaterVideosHandler = function (schema, request) {
-  const user = requiresAuth.call(this, request);
-  try {
-    if (!user) {
-      return new Response(
-        404,
-        {},
-        {
-          errors: ["The email you entered is not Registered. Not Found error"],
-        }
-      );
-    }
-    return new Response(200, {}, { watchlater: user.watchlater });
-  } catch (error) {
-    return new Response(
-      500,
-      {},
-      {
-        error,
-      }
-    );
-  }
+	const user = requiresAuth.call(this, request);
+	try {
+		if (!user) {
+			return new Response(
+				404,
+				{},
+				{
+					errors: ["The email you entered is not Registered. Not Found error"],
+				}
+			);
+		}
+		return new Response(200, {}, { watchlater: user.watchlater });
+	} catch (error) {
+		return new Response(
+			500,
+			{},
+			{
+				error,
+			}
+		);
+	}
 };
 
 /**
@@ -43,28 +43,28 @@ export const getWatchLaterVideosHandler = function (schema, request) {
  * */
 
 export const addItemToWatchLaterVideos = function (schema, request) {
-  const user = requiresAuth.call(this, request);
-  if (user) {
-    const { video } = JSON.parse(request.requestBody);
-    if (user.watchlater.some((item) => item.id === video.id)) {
-      return new Response(
-        409,
-        {},
-        {
-          errors: ["The video is already in your watch later videos"],
-        }
-      );
-    }
-    user.watchlater.push(video);
-    return new Response(201, {}, { watchlater: user.watchlater });
-  }
-  return new Response(
-    404,
-    {},
-    {
-      errors: ["The email you entered is not Registered. Not Found error"],
-    }
-  );
+	const user = requiresAuth.call(this, request);
+	if (user) {
+		const { video } = JSON.parse(request.requestBody);
+		if (user.watchlater.some((item) => item.id === video.id)) {
+			return new Response(
+				409,
+				{},
+				{
+					errors: ["The video is already in your watch later videos"],
+				}
+			);
+		}
+		user.watchlater.push(video);
+		return new Response(201, {}, { watchlater: user.watchlater });
+	}
+	return new Response(
+		404,
+		{},
+		{
+			errors: ["The email you entered is not Registered. Not Found error"],
+		}
+	);
 };
 
 /**
@@ -73,18 +73,18 @@ export const addItemToWatchLaterVideos = function (schema, request) {
  * */
 
 export const removeItemFromWatchLaterVideos = function (schema, request) {
-  const user = requiresAuth.call(this, request);
-  if (user) {
-    const videoId = request.params.videoId;
-    const filteredVideos = user.watchlater.filter(
-      (item) => item._id !== videoId
-    );
-    this.db.users.update({ watchlater: filteredVideos });
-    return new Response(200, {}, { watchlater: filteredVideos });
-  }
-  return new Response(
-    404,
-    {},
-    { errors: ["The user you request does not exist. Not Found error."] }
-  );
+	const user = requiresAuth.call(this, request);
+	if (user) {
+		const videoId = request.params.videoId;
+		const filteredVideos = user.watchlater.filter(
+			(item) => item.id !== videoId
+		);
+		this.db.users.update({ watchlater: filteredVideos });
+		return new Response(200, {}, { watchlater: filteredVideos });
+	}
+	return new Response(
+		404,
+		{},
+		{ errors: ["The user you request does not exist. Not Found error."] }
+	);
 };

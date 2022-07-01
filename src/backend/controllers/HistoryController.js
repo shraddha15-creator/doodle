@@ -88,7 +88,7 @@ export const removeVideoFromHistoryHandler = function (schema, request) {
 			);
 		}
 		const videoId = request.params.videoId;
-		const filteredHistory = user.history.filter((item) => item._id !== videoId);
+		const filteredHistory = user.history.filter((item) => item.id !== videoId);
 		this.db.users.update({ history: filteredHistory });
 		return new Response(200, {}, { history: filteredHistory });
 	} catch (error) {

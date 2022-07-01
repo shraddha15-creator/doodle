@@ -11,7 +11,6 @@ export const WatchLaterCard = ({ video }) => {
 	const { watchLaterDispatch } = useWatchLater();
 	const [showEllipsis, setShowEllipsis] = useState(false);
 	const [isModalOpen, setIsModalOpen] = useState(false);
-	console.log("watch later card", video);
 
 	return (
 		<>
