@@ -4,7 +4,7 @@ import { token } from "./token";
 
 const encodedToken = token();
 
-export const addToLikes = async (video, isLiked, setIsLiked, likesDispatch) => {
+export const addToLikes = async (video, likesDispatch) => {
 	try {
 		const response = await axios.post(
 			"/api/user/likes",
@@ -19,5 +19,5 @@ export const addToLikes = async (video, isLiked, setIsLiked, likesDispatch) => {
 	} catch (error) {
 		console.error("ERROR WHILE ADDING  TO LIKES", error);
 	}
-	setIsLiked(!isLiked === true);
+	// setIsLiked(!isLiked === true);
 };

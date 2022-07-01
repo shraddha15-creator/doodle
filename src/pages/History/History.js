@@ -22,7 +22,7 @@ export const History = () => {
 			const res = await axios.get("/api/user/history", {
 				headers: { authorization: encodedToken },
 			});
-			setHistoryVideos(res.data.history.reverse());
+			setHistoryVideos(res.data.history);
 		} catch (error) {
 			console.error("error while getting history", error);
 		}
@@ -30,6 +30,7 @@ export const History = () => {
 
 	useEffect(() => {
 		getHistoryData(history);
+		// eslint-disable-next-line
 	}, []);
 
 	const clearHistoryHandler = async () => {

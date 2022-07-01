@@ -7,6 +7,8 @@ const likesReducerFunc = (state, action) => {
 			return { ...state, likes: action.payload };
 		case "DELETE_FROM_LIKE":
 			return { ...state, likes: action.payload };
+		default:
+			return state;
 	}
 };
 

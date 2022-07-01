@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactPlayer from "react-player/youtube";
 import { useNavigate, useParams } from "react-router-dom";
 import { useAuth, useLikes, useVideos } from "../../context";
@@ -16,7 +16,9 @@ export const SingleVideo = () => {
 	const video = getSingleVideo(videos, videoId);
 
 	const { likesState, likesDispatch } = useLikes();
-	const [isLiked, setIsLiked] = useState(false);
+	const isLiked =
+		likesState.likes.find((likeVideo) => likeVideo.id === videoId) !==
+		undefined;
 
 	return (
 		<>
@@ -39,14 +41,14 @@ export const SingleVideo = () => {
 							{isLiked ? (
 								<i
 									className="fas fa-thumbs-up liked-icon"
-									onClick={() => removeFromLikes(video, likesDispatch)}
+									onClick={() => removeFromLikes(video.id, likesDispatch)}
 								></i>
 							) : (
 								<i
 									className="far fa-thumbs-up like-icon"
 									onClick={() =>
 										user.token
-											? addToLikes(video, isLiked, setIsLiked, likesDispatch)
+											? addToLikes(video, likesDispatch)
 											: navigate("/login")
 									}
 								></i>

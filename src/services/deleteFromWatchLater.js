@@ -3,9 +3,10 @@ import { token } from "./token";
 
 const encodedToken = token();
 
-export const deleteFromWatchLater = async (id, watchLaterDispatch) => {
+export const deleteFromWatchLater = async (videoId, watchLaterDispatch) => {
+	console.log(videoId, "delet watch later");
 	try {
-		const data = await axios.delete(`/api/user/watchlater/${id}`, {
+		const data = await axios.delete(`/api/user/watchlater/${videoId}`, {
 			headers: { authorization: encodedToken },
 		});
 		watchLaterDispatch({
