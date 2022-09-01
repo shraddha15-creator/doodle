@@ -55,7 +55,7 @@ export const History = () => {
 			<div>
 				{history && history.length === 0 ? (
 					<div className="no-data">
-						<p>No Playlist available</p>
+						<p>No History</p>
 						<GoToHomeBtn />
 					</div>
 				) : (
